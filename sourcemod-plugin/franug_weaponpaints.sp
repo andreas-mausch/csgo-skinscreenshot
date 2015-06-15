@@ -68,9 +68,10 @@ public OnPluginStart()
 	HookEvent("round_start", roundStart);
 	
 	RegConsoleCmd("buyammo1", GetSkins);
-	
+
 	RegAdminCmd("sm_reloadwskins", ReloadSkins, ADMFLAG_ROOT);
-	
+	RegConsoleCmd("sm_changeskin", MyChangeSkin);
+
 	for (new client = 1; client <= MaxClients; client++)
 	{
 		if (!IsClientInGame(client))
@@ -187,6 +188,34 @@ public Action:ReloadSkins(client, args)
 	ReadPaints();
 	ReplyToCommand(client, " \x04[WP]\x01 %T","Weapon paints reloaded", client);
 	
+	return Plugin_Handled;
+}
+
+public Action:MyChangeSkin(client, args)
+{
+	if (GetCmdArgs() != 5)
+	{
+		ReplyToCommand(client, "Need 5 arguments (paint, wear, stattrak, quality, seed)");
+		return Plugin_Handled;
+	}
+
+	new String:arg1[32], String:arg2[32], String:arg3[32], String:arg4[32], String:arg5[32];
+	GetCmdArg(1, arg1, sizeof(arg1));
+	GetCmdArg(2, arg2, sizeof(arg2));
+	GetCmdArg(3, arg3, sizeof(arg3));
+	GetCmdArg(4, arg4, sizeof(arg4));
+	GetCmdArg(5, arg5, sizeof(arg5));
+
+	new new_paint, new_stattrak, new_quality, new_seed;
+	new Float:new_wear;
+
+	new_paint = StringToInt(arg1);
+	new_wear = StringToFloat(arg2);
+	new_stattrak = StringToInt(arg3);
+	new_quality = StringToInt(arg4);
+	new_seed = StringToInt(arg5);
+
+	PrintToServer("MyChangeSkin paint=%d, wear=%f, stattrak=%d, quality=%d, seed=%d", new_paint, new_wear, new_stattrak, new_quality, new_seed);
 	return Plugin_Handled;
 }
 
