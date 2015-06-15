@@ -37,14 +37,6 @@ new Handle:cvar_c4;
 
 new Handle:arbol[MAXPLAYERS+1];
 
-new Handle:saytimer;
-new Handle:cvar_saytimer;
-new g_saytimer;
-
-new Handle:rtimer;
-new Handle:cvar_rtimer;
-new g_rtimer;
-
 new Handle:cvar_rmenu;
 new g_rmenu;
 
@@ -65,8 +57,6 @@ public OnPluginStart()
 	
 	CreateConVar("sm_wpaints_version", DATA, "", FCVAR_PLUGIN|FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY|FCVAR_CHEAT|FCVAR_DONTRECORD);
 	
-	HookEvent("round_start", roundStart);
-	
 	RegConsoleCmd("buyammo1", GetSkins);
 
 	RegAdminCmd("sm_reloadwskins", ReloadSkins, ADMFLAG_ROOT);
@@ -86,21 +76,17 @@ public OnPluginStart()
 	}
 	
 	cvar_c4 = CreateConVar("sm_weaponpaints_c4", "1", "Enable or disable that people can apply paints to the C4. 1 = enabled, 0 = disabled");
-	cvar_saytimer = CreateConVar("sm_weaponpaints_saytimer", "10", "Time in seconds for block that show the plugin commands in chat when someone type a command. -1.0 = never show the commands in chat");
-	cvar_rtimer = CreateConVar("sm_weaponpaints_roundtimer", "20", "Time in seconds roundstart for can use the commands for change the paints. -1.0 = always can use the command");
 	cvar_rmenu = CreateConVar("sm_weaponpaints_rmenu", "1", "Re-open the menu when you select a option. 1 = enabled, 0 = disabled.");
 	
 	g_c4 = GetConVarBool(cvar_c4);
-	g_saytimer = GetConVarInt(cvar_saytimer);
-	g_rtimer = GetConVarInt(cvar_rtimer);
 	g_rmenu = GetConVarBool(cvar_rmenu);
 	
-	HookConVarChange(cvar_c4, OnConVarChanged);
-	HookConVarChange(cvar_saytimer, OnConVarChanged);
-	HookConVarChange(cvar_rtimer, OnConVarChanged);
-	HookConVarChange(cvar_rmenu, OnConVarChanged);
-	
 	ReadPaints();
+}
+
+stock bool:IsValidClient(client, bool:alive = false)
+{
+    return (client >= 1 && client <= MaxClients && IsClientConnected(client) && IsClientInGame(client) && (alive == false || IsPlayerAlive(client)));
 }
 
 public OnConVarChanged(Handle:convar, const String:oldValue[], const String:newValue[])
@@ -108,14 +94,6 @@ public OnConVarChanged(Handle:convar, const String:oldValue[], const String:newV
 	if (convar == cvar_c4)
 	{
 		g_c4 = bool:StringToInt(newValue);
-	}
-	else if (convar == cvar_saytimer)
-	{
-		g_saytimer = StringToInt(newValue);
-	}
-	else if (convar == cvar_rtimer)
-	{
-		g_rtimer = StringToInt(newValue);
 	}
 	else if (convar == cvar_rmenu)
 	{
@@ -193,33 +171,52 @@ public Action:ReloadSkins(client, args)
 
 public Action:MyChangeSkin(client, args)
 {
-	if (GetCmdArgs() != 5)
+	if (GetCmdArgs() != 6)
 	{
-		ReplyToCommand(client, "Need 5 arguments (paint, wear, stattrak, quality, seed)");
+		ReplyToCommand(client, "Need 6 arguments (weapon, paint, wear, stattrak, quality, seed)");
 		return Plugin_Handled;
 	}
 
-	new String:arg1[32], String:arg2[32], String:arg3[32], String:arg4[32], String:arg5[32];
+	new String:arg1[64], String:arg2[32], String:arg3[32], String:arg4[32], String:arg5[32], String:arg6[32];
 	GetCmdArg(1, arg1, sizeof(arg1));
 	GetCmdArg(2, arg2, sizeof(arg2));
 	GetCmdArg(3, arg3, sizeof(arg3));
 	GetCmdArg(4, arg4, sizeof(arg4));
 	GetCmdArg(5, arg5, sizeof(arg5));
+	GetCmdArg(6, arg6, sizeof(arg6));
 
 	new new_paint, new_stattrak, new_quality, new_seed;
 	new Float:new_wear;
+	new String:new_weapon[64];
 
-	new_paint = StringToInt(arg1);
-	new_wear = StringToFloat(arg2);
-	new_stattrak = StringToInt(arg3);
-	new_quality = StringToInt(arg4);
-	new_seed = StringToInt(arg5);
+	new_weapon = arg1;
+	new_paint = StringToInt(arg2);
+	new_wear = StringToFloat(arg3);
+	new_stattrak = StringToInt(arg4);
+	new_quality = StringToInt(arg5);
+	new_seed = StringToInt(arg6);
 
-	PrintToServer("MyChangeSkin paint=%d, wear=%f, stattrak=%d, quality=%d, seed=%d", new_paint, new_wear, new_stattrak, new_quality, new_seed);
+	RemoveWeapons(client);
+	new knife = GivePlayerItem(client, new_weapon);
+	EquipPlayerWeapon(client, knife);
+
+	PrintToServer("MyChangeSkin weapon=%s, paint=%d, wear=%f, stattrak=%d, quality=%d, seed=%d", new_weapon, new_paint, new_wear, new_stattrak, new_quality, new_seed);
 
 	ChangeSkinTo(client, new_paint, new_wear, new_stattrak, new_quality, new_seed);
 
 	return Plugin_Handled;
+}
+
+RemoveWeapons(client)
+{
+	new weapon = -1;
+	for (new i = 0; i <= 5; i++)
+	{
+		if ((weapon = GetPlayerWeaponSlot(client, i)) != INVALID_ENT_REFERENCE)
+		{
+			RemovePlayerItem(client, weapon);
+		}
+	}
 }
 
 ChangeSkinTo(client, new_paint, Float:new_wear, new_stattrak, new_quality, new_seed)
@@ -303,8 +300,6 @@ public Action:OnClientSayCommand(client, const String:command[], const String:sA
 
 		ShowMenu(client, 0);
 		
-		if(saytimer != INVALID_HANDLE || g_saytimer == -1) return Plugin_Handled;
-		saytimer = CreateTimer(1.0*g_saytimer, Tsaytimer);
 		return Plugin_Continue;
 		
 	}
@@ -312,8 +307,6 @@ public Action:OnClientSayCommand(client, const String:command[], const String:sA
 	{
 		ShowSkin(client);
 		
-		if(saytimer != INVALID_HANDLE || g_saytimer == -1) return Plugin_Handled;
-		saytimer = CreateTimer(1.0*g_saytimer, Tsaytimer);
 		return Plugin_Continue;
 	}
     
@@ -342,39 +335,10 @@ ShowSkin(client)
 	CPrintToChat(client, " {green}[WP]{default} %T", "Paint not found", client);
 }
 
-public Action:Tsaytimer(Handle:timer)
-{
-	saytimer = INVALID_HANDLE;
-}
-
-public Action:roundStart(Handle:event, const String:name[], bool:dontBroadcast) 
-{
-	if(g_rtimer == -1) return;
-	
-	if(rtimer != INVALID_HANDLE)
-	{
-		KillTimer(rtimer);
-		rtimer = INVALID_HANDLE;
-	}
-	
-	rtimer = CreateTimer(1.0*g_rtimer, Rtimer);
-}
-
-public Action:Rtimer(Handle:timer)
-{
-	rtimer = INVALID_HANDLE;
-}
-
 public DIDMenuHandler(Handle:menu, MenuAction:action, client, itemNum) 
 {
 	if ( action == MenuAction_Select ) 
 	{
-		if(rtimer == INVALID_HANDLE && g_rtimer != -1)
-		{
-			CPrintToChat(client, " {green}[WP]{default} %T", "You can use this command only the first seconds", client, g_rtimer);
-			if(g_rmenu) ShowMenu(client, GetMenuSelectionPosition());
-			return;
-		}
 		if(!IsPlayerAlive(client))
 		{
 			CPrintToChat(client, " {green}[WP]{default} %t", "You cant use this when you are dead");
