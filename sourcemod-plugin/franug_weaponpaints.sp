@@ -216,7 +216,62 @@ public Action:MyChangeSkin(client, args)
 	new_seed = StringToInt(arg5);
 
 	PrintToServer("MyChangeSkin paint=%d, wear=%f, stattrak=%d, quality=%d, seed=%d", new_paint, new_wear, new_stattrak, new_quality, new_seed);
+
+	ChangeSkinTo(client, new_paint, new_wear, new_stattrak, new_quality, new_seed);
+
 	return Plugin_Handled;
+}
+
+ChangeSkinTo(client, new_paint, Float:new_wear, new_stattrak, new_quality, new_seed)
+{
+	if(!IsPlayerAlive(client))
+	{
+		ReplyToCommand(client, "You cant use this when you are dead");
+		return;
+	}
+
+	new windex = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+	if(windex < 1)
+	{
+		ReplyToCommand(client, "You cant use a paint on this weapon");
+		return;
+	}
+
+	decl String:Classname[64];
+	GetEdictClassname(windex, Classname, 64);
+
+	if(StrEqual(Classname, "weapon_taser"))
+	{
+		ReplyToCommand(client, "You cant use a paint on this weapon");
+		return;
+	}
+
+	new weaponindex = GetEntProp(windex, Prop_Send, "m_iItemDefinitionIndex");
+	if(weaponindex == 42 || weaponindex == 59)
+	{
+		ReplyToCommand(client, "You cant use a paint on this weapon");
+		return;
+	}
+
+	if(GetPlayerWeaponSlot(client, CS_SLOT_PRIMARY) == windex || GetPlayerWeaponSlot(client, CS_SLOT_SECONDARY) == windex || GetPlayerWeaponSlot(client, CS_SLOT_KNIFE) == windex || (g_c4 && GetPlayerWeaponSlot(client, CS_SLOT_C4) == windex))
+	{
+		switch (weaponindex)
+		{
+			case 60: strcopy(Classname, 64, "weapon_m4a1_silencer");
+			case 61: strcopy(Classname, 64, "weapon_usp_silencer");
+			case 63: strcopy(Classname, 64, "weapon_cz75a");
+			case 500: strcopy(Classname, 64, "weapon_bayonet");
+			case 506: strcopy(Classname, 64, "weapon_knife_gut");
+			case 505: strcopy(Classname, 64, "weapon_knife_flip");
+			case 508: strcopy(Classname, 64, "weapon_knife_m9_bayonet");
+			case 507: strcopy(Classname, 64, "weapon_knife_karambit");
+			case 509: strcopy(Classname, 64, "weapon_knife_tactical");
+			case 515: strcopy(Classname, 64, "weapon_knife_butterfly");
+		}
+		ChangePaint2(client, windex, Classname, weaponindex, new_paint, new_wear, new_stattrak, new_quality, new_seed);
+		FakeClientCommand(client, "use %s", Classname);
+	}
+	else ReplyToCommand(client, "You cant use a paint in this weapon");
 }
 
 ShowMenu(client, item)
@@ -378,7 +433,7 @@ public DIDMenuHandler(Handle:menu, MenuAction:action, client, itemNum)
 				case 515: strcopy(Classname, 64, "weapon_knife_butterfly");
 			}
 			SetTrieValue(arbol[client], Classname, theindex);
-			ChangePaint2(client, windex, Classname, weaponindex);
+			ChangePaint(client, windex, Classname, weaponindex);
 			FakeClientCommand(client, "use %s", Classname);
 			if(theindex == 0) CPrintToChat(client, " {green}[WP]{default} %t","You have choose your default paint for your", Classname);
 			else if(theindex == -1) CPrintToChat(client, " {green}[WP]{default} %t","You have choose a random paint for your", Classname);
@@ -531,7 +586,7 @@ ChangePaint(client, windex, String:Classname[64], weaponindex)
 	WritePackCell(pack,m_iItemIDLow);
 }
 
-ChangePaint2(client, windex, String:Classname[64], weaponindex)
+ChangePaint2(client, windex, String:Classname[64], weaponindex, new_paint, Float:new_wear, new_stattrak, new_quality, new_seed)
 {
 	new bool:knife = false;
 	if(StrContains(Classname, "weapon_knife", false) == 0 || StrContains(Classname, "weapon_bayonet", false) == 0)
@@ -562,14 +617,6 @@ ChangePaint2(client, windex, String:Classname[64], weaponindex)
 		SetReserveAmmo(client, windex, ammo);
 		SetEntProp(entity, Prop_Send, "m_iClip1", clip);
 	}
-	new theindex;
-	GetTrieValue(arbol[client], Classname, theindex);
-	if(theindex == 0) return;
-
-	if(theindex == -1)
-	{
-		theindex = GetRandomInt(1, g_paintCount-1);
-	}
 
 	new m_iItemIDHigh = GetEntProp(entity, Prop_Send, "m_iItemIDHigh");
 	new m_iItemIDLow = GetEntProp(entity, Prop_Send, "m_iItemIDLow");
@@ -577,12 +624,11 @@ ChangePaint2(client, windex, String:Classname[64], weaponindex)
 	SetEntProp(entity,Prop_Send,"m_iItemIDLow",2048);
 	SetEntProp(entity,Prop_Send,"m_iItemIDHigh",0);
 
-	SetEntProp(entity,Prop_Send,"m_nFallbackPaintKit",g_paints[theindex][index]);
-	if(g_paints[theindex][wear] >= 0.0) SetEntPropFloat(entity,Prop_Send,"m_flFallbackWear",g_paints[theindex][wear]);
-	if(g_paints[theindex][stattrak] != -2) SetEntProp(entity,Prop_Send,"m_nFallbackStatTrak",g_paints[theindex][stattrak]);
-	if(g_paints[theindex][quality] != -2) SetEntProp(entity,Prop_Send,"m_iEntityQuality",g_paints[theindex][quality]);
-	if(g_paints[theindex][seed] != -2) SetEntProp(entity,Prop_Send,"m_nFallbackSeed",g_paints[theindex][seed]);
-	PrintToServer("Seed %d", g_paints[theindex][seed]);
+	SetEntProp(entity, Prop_Send, "m_nFallbackPaintKit", new_paint);
+	SetEntPropFloat(entity, Prop_Send, "m_flFallbackWear", new_wear);
+	SetEntProp(entity, Prop_Send, "m_nFallbackStatTrak", new_stattrak);
+	SetEntProp(entity, Prop_Send, "m_iEntityQuality", new_quality);
+	SetEntProp(entity, Prop_Send, "m_nFallbackSeed", new_seed);
 
 	CreateDataTimer(0.2, RestoreItemID, pack);
 	WritePackCell(pack,EntIndexToEntRef(entity));
