@@ -4,4 +4,4 @@ import time
 from PIL import ImageGrab
 
 img=ImageGrab.grab()
-img.save('ScreenShot.jpg')
+img.save('Screenshot.jpg')
