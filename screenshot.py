@@ -5,34 +5,40 @@ import win32gui, win32api, win32con
 from PIL import ImageGrab
 
 def focusWindow(title):
-	pwin = win32gui.FindWindow(None, title)
-	win32gui.BringWindowToTop(pwin)
-	win32gui.SetForegroundWindow(pwin)
+	window = win32gui.FindWindow(None, title)
+	if window is 0:
+		return False
+	win32gui.BringWindowToTop(window)
+	win32gui.SetForegroundWindow(window)
+	return True
 
-def sendkey(vk):
+def sendKey(vk):
 	MAPVK_VK_TO_VSC = 0
-	scancode = win32api.MapVirtualKey(vk, MAPVK_VK_TO_VSC);
-	win32api.keybd_event(vk, scancode, 0, 0);
+	scancode = win32api.MapVirtualKey(vk, MAPVK_VK_TO_VSC)
+	win32api.keybd_event(vk, scancode, 0, 0)
 	time.sleep(0.01)
-	win32api.keybd_event(vk, scancode, win32con.KEYEVENTF_KEYUP, 0);
+	win32api.keybd_event(vk, scancode, win32con.KEYEVENTF_KEYUP, 0)
 
-def sendstring(string):
+def sendString(string):
 	for c in string:
-		sendkey(ord(c.upper()))
+		sendKey(ord(c.upper()))
 
-def toggle_console():
-	sendkey(win32con.VK_F9)
+def toggleConsole():
+	sendKey(win32con.VK_F9)
 	time.sleep(0.1)
 
-def execute_console_command(command):
-	toggle_console()
-	sendstring(command)
-	sendkey(win32con.VK_RETURN)
+def executeConsoleCommand(command):
+	toggleConsole()
+	sendString(command)
+	sendKey(win32con.VK_RETURN)
 	time.sleep(0.1)
-	toggle_console()
+	toggleConsole()
 
-focusWindow("Counter-Strike: Global Offensive")
-execute_console_command("status")
+if not focusWindow("Counter-Strike: Global Offensive"):
+	print("Couldn't find Counter-Strike GO")
+	quit()
+
+executeConsoleCommand("status")
 
 img=ImageGrab.grab()
 img.save('Screenshot.jpg')
