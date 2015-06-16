@@ -21,10 +21,18 @@ def sendstring(string):
 	for c in string:
 		sendkey(ord(c.upper()))
 
-sendkey(win32con.VK_F9)
-time.sleep(0.1)
-sendkey(ord('H'))
-sendstring("Test")
+def toggle_console():
+	sendkey(win32con.VK_F9)
+	time.sleep(0.1)
+
+def execute_console_command(command):
+	toggle_console()
+	sendstring(command)
+	sendkey(win32con.VK_RETURN)
+	time.sleep(0.1)
+	toggle_console()
+
+execute_console_command("status")
 # Doesn't work
 #shell = win32com.client.Dispatch("WScript.Shell")
 #shell.SendKeys('{F9}')
