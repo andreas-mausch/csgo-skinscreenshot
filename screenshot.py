@@ -3,8 +3,6 @@ import sys
 import time
 import win32gui, win32api, win32con
 from PIL import ImageGrab
-from pykeyboard import PyKeyboard
-import win32com.client
 
 def focusWindow(title):
 	pwin = win32gui.FindWindow(None, title)
