@@ -2,11 +2,15 @@ import csgo
 import messagequeue
 import pika
 import screenshot
+import time
 
 def takeScreenshot(skin):
 	csgo.focusCounterStrikeWindow()
 	csgo.executeConsoleCommand("sm_changeskin " + skin)
-	screenshot.saveScreenshot("Screenshot.jpg")
+	time.sleep(5)
+	csgo.sendKey(ord('F'))
+	time.sleep(2)
+	screenshot.saveScreenshot("Screenshot.png")
 
 def callback(ch, method, properties, body):
 	string = body.decode("utf-8")
