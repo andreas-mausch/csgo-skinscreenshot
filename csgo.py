@@ -4,7 +4,7 @@ import win32api, win32con, win32gui
 MAPVK_VK_TO_VSC = 0
 
 def screenshotFilename(skin, view):
-	return "screenshots/" + skin.replace(' ', '##') + "###" + view + ".png"
+	return "screenshots/" + skin.replace(' ', '##') + "###" + view + ".jpg"
 
 def focusWindow(title):
 	window = win32gui.FindWindow(None, title)
