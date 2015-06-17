@@ -1,4 +1,6 @@
 import csgo
+import messagequeue
+import os
 from flask import Flask, request, send_from_directory
 
 app = Flask(__name__)
@@ -13,9 +15,15 @@ def index(weapon=None):
 	view = request.args.get("view")
 
 	weaponString = weapon + " " + paint + " " + float + " " + str(stattrak) + " " + str(quality) + " " + seed
-	filename = csgo.screenshotFilename(weaponString, "playside")
-	print(filename)
-	return send_from_directory(".", filename)
+	filename = csgo.screenshotFilename(weaponString, view)
+	if not os.path.isfile(filename):
+		connection = messagequeue.open('Hauptrechner')
+		channel = messagequeue.channel(connection, 'hello')
+		messagequeue.send(channel, 'hello', weaponString)
+		connection.close()
+		return "queued"
+	else:
+		return send_from_directory(".", filename)
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	app.run(host="0.0.0.0", debug=True)
