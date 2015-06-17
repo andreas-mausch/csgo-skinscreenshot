@@ -249,22 +249,6 @@ public Action:Pasado(Handle:timer, Handle:pack)
 	}
 }
 
-stock GetReserveAmmo(client, weapon)
-{
-	new ammotype = GetEntProp(weapon, Prop_Send, "m_iPrimaryAmmoType");
-	if(ammotype == -1) return -1;
-
-	return GetEntProp(client, Prop_Send, "m_iAmmo", _, ammotype);
-}
-
-stock SetReserveAmmo(client, weapon, ammo)
-{
-	new ammotype = GetEntProp(weapon, Prop_Send, "m_iPrimaryAmmoType");
-	if(ammotype == -1) return;
-
-	SetEntProp(client, Prop_Send, "m_iAmmo", ammo, _, ammotype);
-}
-
 public Action:RestoreItemID(Handle:timer, Handle:pack)
 {
 	new entity;
