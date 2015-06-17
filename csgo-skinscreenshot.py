@@ -3,14 +3,15 @@ import messagequeue
 import pika
 import screenshot
 
-def takeScreenshot():
+def takeScreenshot(skin):
 	csgo.focusCounterStrikeWindow()
-	csgo.executeConsoleCommand("status")
+	csgo.executeConsoleCommand("sm_changeskin " + skin)
 	screenshot.saveScreenshot("Screenshot.jpg")
 
 def callback(ch, method, properties, body):
-	print ("Received ", body)
-	takeScreenshot()
+	string = body.decode("utf-8")
+	print ("Received ", string)
+	takeScreenshot(string)
 	ch.basic_ack(delivery_tag = method.delivery_tag)
 
 connection = messagequeue.open('Hauptrechner')
