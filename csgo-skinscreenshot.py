@@ -1,3 +1,4 @@
+import config
 import csgo
 import messagequeue
 import os.path
@@ -9,7 +10,7 @@ def takeScreenshot(skin):
 	csgo.focusCounterStrikeWindow()
 	csgo.executeConsoleCommand("sm_teleport 74 384 11851 20 0 0")
 	csgo.executeConsoleCommand("sm_changeskin " + skin)
-	time.sleep(3)
+	time.sleep(5)
 	screenshot.saveScreenshot(csgo.screenshotFilename(skin, "playside"))
 	csgo.sendKey(ord('F'))
 	time.sleep(2)
@@ -25,7 +26,7 @@ def callback(ch, method, properties, body):
 		takeScreenshot(skin)
 	ch.basic_ack(delivery_tag = method.delivery_tag)
 
-connection = messagequeue.open('Hauptrechner')
-channel = messagequeue.channel(connection, 'hello')
-messagequeue.receive(channel, 'hello', callback)
+connection = messagequeue.open(config.messagequeueHost)
+channel = messagequeue.channel(connection, config.messagequeueName)
+messagequeue.receive(channel, config.messagequeueName, callback)
 channel.start_consuming()

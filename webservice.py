@@ -1,3 +1,4 @@
+import config
 import csgo
 import messagequeue
 import os
@@ -17,9 +18,9 @@ def index(weapon=None):
 	weaponString = weapon + " " + paint + " " + float + " " + str(stattrak) + " " + str(quality) + " " + seed
 	filename = csgo.screenshotFilename(weaponString, view)
 	if not os.path.isfile(filename):
-		connection = messagequeue.open('Hauptrechner')
-		channel = messagequeue.channel(connection, 'hello')
-		messagequeue.send(channel, 'hello', weaponString)
+		connection = messagequeue.open(config.messagequeueHost)
+		channel = messagequeue.channel(connection, config.messagequeueName)
+		messagequeue.send(channel, config.messagequeueName, weaponString)
 		connection.close()
 		return "queued"
 	else:
