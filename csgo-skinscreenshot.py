@@ -10,7 +10,8 @@ def takeScreenshot(skin):
 	time.sleep(5)
 	csgo.sendKey(ord('F'))
 	time.sleep(2)
-	screenshot.saveScreenshot("Screenshot.png")
+	filename = skin.replace(' ', '##')
+	screenshot.saveScreenshot("screenshots/" + filename + ".png")
 
 def callback(ch, method, properties, body):
 	string = body.decode("utf-8")
