@@ -52,7 +52,7 @@ def inventory(steamId=None):
 	weapons = []
 	for item in inventoryJson["result"]["items"]:
 		itemSchema = findItemInSchema(item["defindex"])
-		itemClass = itemSchema["item_class"]
+		itemClass = itemSchema["name"]
 		if itemClass.startswith("weapon_"):
 			paint = findItemAttribute(item, 6)["float_value"]
 			seed = findItemAttribute(item, 7)["float_value"]

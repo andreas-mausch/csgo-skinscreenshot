@@ -13,8 +13,8 @@
 						<div>{{ weapon.paint }}</div>
 						<div>{{ weapon.seed }}</div>
 						<div>{{ weapon.wear }}</div>
-						<div><a href="/image/{{ weapon.class }}?paint={{ weapon.paint }}&float={{ weapon.wear }}&seed={{ weapon.seed }}&view=playside">playside</a></div>
-						<div><a href="/image/{{ weapon.class }}?paint={{ weapon.paint }}&float={{ weapon.wear }}&seed={{ weapon.seed }}&view=inspect">inspect</a></div>
+						<div><a href="/{{ weapon.class }}?paint={{ weapon.paint }}&float={{ weapon.wear }}&seed={{ weapon.seed }}&view=playside">playside</a></div>
+						<div><a href="/{{ weapon.class }}?paint={{ weapon.paint }}&float={{ weapon.wear }}&seed={{ weapon.seed }}&view=inspect">inspect</a></div>
 					</li>
 				{% endfor %}
 			</ul>
