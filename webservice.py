@@ -19,7 +19,7 @@ def steamInventory(steamId):
 
 def steamSchema():
 	if config.useOfflineSchema:
-		with open('CS-GO Schema.json', 'r') as f:
+		with open('steam/csgo-schema.json', 'r') as f:
 			readData = f.read()
 			return json.loads(readData)
 	else:
