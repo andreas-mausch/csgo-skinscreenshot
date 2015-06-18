@@ -26,7 +26,4 @@ def callback(ch, method, properties, body):
 		takeScreenshot(skin)
 	ch.basic_ack(delivery_tag = method.delivery_tag)
 
-connection = messagequeue.open(config.messagequeueHost)
-channel = messagequeue.channel(connection, config.messagequeueName)
-messagequeue.receive(channel, config.messagequeueName, callback)
-channel.start_consuming()
+messagequeue.start_consuming(callback)

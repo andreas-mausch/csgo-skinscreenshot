@@ -35,10 +35,7 @@ def weapon(weapon=None):
 	weaponString = weapon + " " + paint + " " + float + " " + str(stattrak) + " " + str(quality) + " " + seed
 	filename = csgo.screenshotFilename(weaponString, view)
 	if not os.path.isfile(filename):
-		connection = messagequeue.open(config.messagequeueHost)
-		channel = messagequeue.channel(connection, config.messagequeueName)
-		messagequeue.send(channel, config.messagequeueName, weaponString)
-		connection.close()
+		messagequeue.send(weaponString)
 		return "queued", status.HTTP_202_ACCEPTED
 	else:
 		return send_from_directory(".", filename)
