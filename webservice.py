@@ -25,6 +25,12 @@ def findItemInSchema(defindex):
 			return item
 	return None
 
+def findItemAttribute(item, defindex):
+	for attribute in item["attributes"]:
+		if attribute["defindex"] == defindex:
+			return attribute;
+	return None
+
 @app.route('/<weapon>')
 def index(weapon=None):
 	paint = request.args.get("paint")
@@ -36,9 +42,16 @@ def index(weapon=None):
 @app.route('/inventory/<steamId>')
 def inventory(steamId=None):
 	inventoryJson = steamInventory(steamId)
+	weapons = []
 	for item in inventoryJson["result"]["items"]:
 		itemSchema = findItemInSchema(item["defindex"])
-		print(itemSchema["item_class"])
+		itemClass = itemSchema["item_class"]
+		if itemClass.startswith("weapon_"):
+			paint = findItemAttribute(item, 6)["float_value"]
+			seed = findItemAttribute(item, 7)["float_value"]
+			wear = findItemAttribute(item, 8)["float_value"]
+			weapons.append({ "class": itemClass, "paint": paint, "seed": seed, "wear": wear })
+	print(weapons)
 	return render_template("inventory.html", steamId=steamId)
 
 @app.route('/jquery-1.11.3.min.js')
