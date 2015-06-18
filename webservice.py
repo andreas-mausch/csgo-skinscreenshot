@@ -2,20 +2,24 @@ import config
 import csgo
 import messagequeue
 import os
-from flask import Flask, request, send_from_directory
+from flask import Flask, request, send_from_directory, render_template
 from flask.ext.api import status
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-	return send_from_directory(".", "csgo-skinscreenshot.html")
+@app.route('/<weapon>')
+def index(weapon=None):
+	paint = request.args.get("paint")
+	float = request.args.get("float")
+	seed = request.args.get("seed")
+	view = request.args.get("view")
+	return render_template("csgo-skinscreenshot.html", weapon=weapon, paint=paint, float=float, seed=seed, view=view)
 
 @app.route('/jquery-1.11.3.min.js')
 def jquery():
 	return send_from_directory(".", "jquery-1.11.3.min.js")
 
-@app.route('/<weapon>')
+@app.route('/image/<weapon>')
 def weapon(weapon=None):
 	paint = request.args.get("paint")
 	float = request.args.get("float")
