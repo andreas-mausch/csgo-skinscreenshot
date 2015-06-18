@@ -15,9 +15,38 @@
 						<div>{{ weapon.wear }}</div>
 						<div><a href="/{{ weapon.class }}?paint={{ weapon.paint }}&float={{ weapon.wear }}&seed={{ weapon.seed }}&view=playside">playside</a></div>
 						<div><a href="/{{ weapon.class }}?paint={{ weapon.paint }}&float={{ weapon.wear }}&seed={{ weapon.seed }}&view=inspect">inspect</a></div>
+						<div id="weapon_playside_{{ loop.index }}">
+							<img src="/preloader.gif">
+						</div>
+						<div id="weapon_inspect_{{ loop.index }}">
+							<img src="/preloader.gif">
+						</div>
 					</li>
 				{% endfor %}
 			</ul>
 		</div>
+
+		<script>
+			function loadImage(index, weapon, paint, float, seed, view) {
+				var url = "/image/" + weapon + "?paint=" + paint + "&float=" + float + "&seed=" + seed + "&view=" + view + "&date=" + new Date().getTime();
+				$.get(url, function(data, textStatus, xhr) {
+					if (xhr.status == 200) {
+						$('<img src="' + url + '" style="width: 200px; height: 100px">').load(function() {
+							var elementId = '#weapon_' + view + '_' + index;
+							$(elementId).html(this);
+						});
+					} else if (xhr.status == 202) {
+						setTimeout(function() {
+							loadImage(index, weapon, paint, float, seed, view);
+						}, 1000);
+					}
+				});
+			}
+
+			{% for weapon in weapons %}
+				loadImage({{ loop.index }}, "{{ weapon.class }}", {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }}, "playside");
+				loadImage({{ loop.index }}, "{{ weapon.class }}", {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }}, "inspect");
+			{% endfor %}
+		</script>
 	</body>
 </html>
