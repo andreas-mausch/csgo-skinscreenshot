@@ -2,7 +2,8 @@ import config
 import csgo
 import messagequeue
 import os
-from flask import Flask, request, send_from_directory, render_template
+import urllib.request
+from flask import Flask, Response, request, send_from_directory, render_template
 from flask.ext.api import status
 
 app = Flask(__name__)
@@ -14,6 +15,15 @@ def index(weapon=None):
 	seed = request.args.get("seed")
 	view = request.args.get("view")
 	return render_template("csgo-skinscreenshot.html", weapon=weapon, paint=paint, float=float, seed=seed, view=view)
+
+@app.route('/inventory/<steamId>')
+def inventory(steamId=None):
+	return render_template("inventory.html", steamId=steamId)
+
+@app.route('/steam/inventory/<steamId>')
+def steamInventory(steamId=None):
+	json = urllib.request.urlopen("http://api.steampowered.com/IEconItems_730/GetPlayerItems/v0001/?key=" + config.steamApiKey + "&SteamID=" + steamId).read()
+	return Response(response=json, status=200, mimetype="application/json")
 
 @app.route('/jquery-1.11.3.min.js')
 def jquery():

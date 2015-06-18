@@ -3,3 +3,6 @@ __pycache__
 screenshots/
 
 sourcemod-plugin/compiled
+
+# private data (steam api key)
+config.py

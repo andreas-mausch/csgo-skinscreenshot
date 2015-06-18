@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>CS:GO Skin Screenshot</title>
+		<script src="/jquery-1.11.3.min.js"></script>
+	</head>
+
+	<body>
+		<div id="inventory">
+		</div>
+		<script>
+			var url = "/steam/inventory/{{steamId}}"
+			$.getJSON(url, function(data) {
+				$.each(data.result.items, function(i, item) {
+					$("<div>Item: " + item.id + "</div>").appendTo("#inventory");
+				});
+			});
+		</script>
+	</body>
+</html>
