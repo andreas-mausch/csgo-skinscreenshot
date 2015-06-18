@@ -5,14 +5,16 @@
 	</head>
 	
 	<body>
-		<div id="imageDiv"></div>
+		<div id="imageDiv">
+			<img src="preloader.gif">
+		</div>
 		<script>
 			function loadImage() {
 				var url = "/image/{{weapon}}?paint={{paint}}&float={{float}}&seed={{seed}}&view={{view}}&date=" + new Date().getTime();
 				$.get(url, function(data, textStatus, xhr) {
 					if (xhr.status == 200) {
 						$('<img src="' + url + '">').load(function() {
-							$(this).appendTo('#imageDiv');
+							$('#imageDiv').html(this);
 						});
 					} else if (xhr.status == 202) {
 						setTimeout(loadImage, 1000);

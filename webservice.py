@@ -19,6 +19,10 @@ def index(weapon=None):
 def jquery():
 	return send_from_directory(".", "jquery-1.11.3.min.js")
 
+@app.route('/preloader.gif')
+def preloader():
+	return send_from_directory(".", "preloader.gif")
+
 @app.route('/image/<weapon>')
 def weapon(weapon=None):
 	paint = request.args.get("paint")
