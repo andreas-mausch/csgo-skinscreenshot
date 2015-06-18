@@ -17,11 +17,11 @@ def index(weapon=None):
 
 @app.route('/jquery-1.11.3.min.js')
 def jquery():
-	return send_from_directory(".", "jquery-1.11.3.min.js")
+	return send_from_directory("static", "jquery-1.11.3.min.js")
 
 @app.route('/preloader.gif')
 def preloader():
-	return send_from_directory(".", "preloader.gif")
+	return send_from_directory("static", "preloader.gif")
 
 @app.route('/image/<weapon>')
 def weapon(weapon=None):
