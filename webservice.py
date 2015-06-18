@@ -1,12 +1,29 @@
 import config
 import csgo
+import json
 import messagequeue
 import os
-import urllib.request
+import requests
 from flask import Flask, Response, request, send_from_directory, render_template
 from flask.ext.api import status
 
 app = Flask(__name__)
+
+def steamInventory(steamId):
+	return json.loads(requests.get(url="http://api.steampowered.com/IEconItems_730/GetPlayerItems/v0001/?key=" + config.steamApiKey + "&SteamID=" + steamId).text)
+
+def steamSchema():
+	# http://api.steampowered.com/IEconItems_730/GetSchema/v0002/?key=
+	with open('CS-GO Schema.json', 'r') as f:
+		readData = f.read()
+		return json.loads(readData)
+
+def findItemInSchema(defindex):
+	schemaJson = steamSchema()
+	for item in schemaJson["result"]["items"]:
+		if item["defindex"] == defindex:
+			return item
+	return None
 
 @app.route('/<weapon>')
 def index(weapon=None):
@@ -18,12 +35,11 @@ def index(weapon=None):
 
 @app.route('/inventory/<steamId>')
 def inventory(steamId=None):
+	inventoryJson = steamInventory(steamId)
+	for item in inventoryJson["result"]["items"]:
+		itemSchema = findItemInSchema(item["defindex"])
+		print(itemSchema["item_class"])
 	return render_template("inventory.html", steamId=steamId)
-
-@app.route('/steam/inventory/<steamId>')
-def steamInventory(steamId=None):
-	json = urllib.request.urlopen("http://api.steampowered.com/IEconItems_730/GetPlayerItems/v0001/?key=" + config.steamApiKey + "&SteamID=" + steamId).read()
-	return Response(response=json, status=200, mimetype="application/json")
 
 @app.route('/jquery-1.11.3.min.js')
 def jquery():
