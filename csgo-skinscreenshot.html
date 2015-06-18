@@ -5,6 +5,7 @@
 	</head>
 	
 	<body>
+		<div id="myDiv"></div>
 		<img id="myImage" src="">
 		<script>
 /*			var newImage = new Image();
@@ -19,9 +20,31 @@
 			}
 			
 			// updateImage();*/
-			$.get("http://neonew-pc:5000/weapon_knife_karambit?paint=418&float=0.01&seed=0&view=inspect&date=" + new Date().getTime(), function(data, status){
-				alert("Data: " + data + "\nStatus: " + status);
-			});
+			/*$.ajax({
+				url: "http://neonew-pc:5000/weapon_knife_karambit?paint=418&float=0.01&seed=0&view=inspect&date=" + new Date().getTime(),
+				processData: false
+			}).done(function(data){
+				$("#myImage").attr("src", "data:image/jpeg;base64," + base64encode(data));
+			});*/
+			/*$('<img src="' + "/weapon_knife_karambit?paint=418&float=0.01&seed=0&view=inspect&date=" + new Date().getTime() + '">').load(function(responseText, textStatus, xhr) {
+			alert(xhr.status);
+				$(this).width(100).height(100).appendTo('#myDiv');
+			});*/
+
+			function loadImage() {
+				var url = "/weapon_knife_karambit?paint=44&float=0.001&seed=0&view=inspect&date=" + new Date().getTime();
+				$.get(url, function(data, textStatus, xhr) {
+					if (xhr.status == 200) {
+						$('<img src="' + url + '">').load(function() {
+							$(this).appendTo('#myDiv');
+						});
+					} else if (xhr.status == 202) {
+						setTimeout(loadImage, 1000);
+					}
+				});
+			}
+
+			loadImage();
 		</script>
 	</body>
 </html>

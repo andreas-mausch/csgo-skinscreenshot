@@ -3,11 +3,20 @@ import csgo
 import messagequeue
 import os
 from flask import Flask, request, send_from_directory
+from flask.ext.api import status
 
 app = Flask(__name__)
 
+@app.route('/')
+def index():
+	return send_from_directory(".", "csgo-skinscreenshot.html")
+
+@app.route('/jquery-1.11.3.min.js')
+def jquery():
+	return send_from_directory(".", "jquery-1.11.3.min.js")
+
 @app.route('/<weapon>')
-def index(weapon=None):
+def weapon(weapon=None):
 	paint = request.args.get("paint")
 	float = request.args.get("float")
 	stattrak = -1
@@ -22,7 +31,7 @@ def index(weapon=None):
 		channel = messagequeue.channel(connection, config.messagequeueName)
 		messagequeue.send(channel, config.messagequeueName, weaponString)
 		connection.close()
-		return "queued"
+		return "queued", status.HTTP_202_ACCEPTED
 	else:
 		return send_from_directory(".", filename)
 
