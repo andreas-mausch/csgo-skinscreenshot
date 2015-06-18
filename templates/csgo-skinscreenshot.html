@@ -8,7 +8,7 @@
 		<div id="imageDiv"></div>
 		<script>
 			function loadImage() {
-				var url = "/image/weapon_knife_karambit?paint=44&float=0.001&seed=0&view=inspect&date=" + new Date().getTime();
+				var url = "/image/{{weapon}}?paint={{paint}}&float={{float}}&seed={{seed}}&view={{view}}&date=" + new Date().getTime();
 				$.get(url, function(data, textStatus, xhr) {
 					if (xhr.status == 200) {
 						$('<img src="' + url + '">').load(function() {
