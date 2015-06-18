@@ -10,13 +10,20 @@ from flask.ext.api import status
 app = Flask(__name__)
 
 def steamInventory(steamId):
-	return json.loads(requests.get(url="http://api.steampowered.com/IEconItems_730/GetPlayerItems/v0001/?key=" + config.steamApiKey + "&SteamID=" + steamId).text)
+	if config.alwaysUseOfflinePlayerItems:
+		with open('steam/playeritems-76561198009699437.json', 'r') as f:
+			readData = f.read()
+			return json.loads(readData)
+	else:
+		return json.loads(requests.get(url="http://api.steampowered.com/IEconItems_730/GetPlayerItems/v0001/?key=" + config.steamApiKey + "&SteamID=" + steamId).text)
 
 def steamSchema():
-	# http://api.steampowered.com/IEconItems_730/GetSchema/v0002/?key=
-	with open('CS-GO Schema.json', 'r') as f:
-		readData = f.read()
-		return json.loads(readData)
+	if config.useOfflineSchema:
+		with open('CS-GO Schema.json', 'r') as f:
+			readData = f.read()
+			return json.loads(readData)
+	else:
+		return json.loads(requests.get(url="http://api.steampowered.com/IEconItems_730/GetSchema/v0002/?key=" + config.steamApiKey).text)
 
 def findItemInSchema(defindex):
 	schemaJson = steamSchema()
