@@ -6,14 +6,11 @@
 
 	<body>
 		<div id="inventory">
+			<ul>
+				{% for weapon in weapons %}
+					<li>{{ weapon.class }}</li>
+				{% endfor %}
+			</ul>
 		</div>
-		<script>
-			var url = "/steam/inventory/{{steamId}}"
-			$.getJSON(url, function(data) {
-				$.each(data.result.items, function(i, item) {
-					$("<div>Item: " + item.id + "</div>").appendTo("#inventory");
-				});
-			});
-		</script>
 	</body>
 </html>

@@ -52,7 +52,7 @@ def inventory(steamId=None):
 			wear = findItemAttribute(item, 8)["float_value"]
 			weapons.append({ "class": itemClass, "paint": paint, "seed": seed, "wear": wear })
 	print(weapons)
-	return render_template("inventory.html", steamId=steamId)
+	return render_template("inventory.html", weapons=weapons)
 
 @app.route('/jquery-1.11.3.min.js')
 def jquery():
