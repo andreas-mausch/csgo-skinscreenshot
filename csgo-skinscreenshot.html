@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>CS:GO Skin Screenshot</title>
+		<script src="jquery-1.11.3.min.js"></script>
+	</head>
+	
+	<body>
+		<img id="myImage" src="">
+		<script>
+/*			var newImage = new Image();
+			newImage.src = "http://neonew-pc:5000/weapon_knife_karambit?paint=418&float=0.01&seed=0&view=inspect&date=" + new Date().getTime();
+
+			function updateImage() {
+				if (newImage.complete) {
+					document.getElementById("myImage").src = newImage.src;
+				} else {
+					setTimeout(updateImage, 1000);
+				}
+			}
+			
+			// updateImage();*/
+			$.get("http://neonew-pc:5000/weapon_knife_karambit?paint=418&float=0.01&seed=0&view=inspect&date=" + new Date().getTime(), function(data, status){
+				alert("Data: " + data + "\nStatus: " + status);
+			});
+		</script>
+	</body>
+</html>
