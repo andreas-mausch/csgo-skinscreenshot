@@ -13,9 +13,7 @@
 				var url = "/image/{{weapon}}?paint={{paint}}&float={{float}}&seed={{seed}}&view={{view}}&date=" + new Date().getTime();
 				$.get(url, function(data, textStatus, xhr) {
 					if (xhr.status == 200) {
-						$('<img src="' + url + '">').load(function() {
-							$('#imageDiv').html(this);
-						});
+						$('#imageDiv').html('<img src="' + url + '">');
 					} else if (xhr.status == 202) {
 						setTimeout(loadImage, 1000);
 					}

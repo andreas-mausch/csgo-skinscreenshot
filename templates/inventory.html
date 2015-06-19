@@ -1,26 +1,72 @@
 <html>
 	<head>
-		<title>CS:GO Skin Screenshot</title>
+		<title>CS:GO Skin Screenshots</title>
 		<script src="/jquery-1.11.3.min.js"></script>
+		<style>
+			body {
+				font-family: Verdana, sans-serif;
+			}
+			.header {
+				font-size: 250%;
+				border: 1px solid;
+				margin: 30px 200px 100px 200px;
+				text-align: center;
+			}
+			ul {
+				list-style-type: none;
+				padding: 0px;
+				margin: 0px;
+			}
+			.number, .info, .weapon_thumbnail {
+				float: left;
+			}
+			.row {
+				clear: both;
+			}
+			.info {
+				width: 300px;
+			}
+			.number {
+				width: 150px;
+				font-size: 250%;
+				margin: 5px 30px;
+			}
+			.weapon_thumbnail {
+				margin: 0px 20px 14px 20px;
+			}
+			.weapon_thumbnail img {
+				border: 1px solid black;
+				width: 208px;
+				height: 130px;
+			}
+		</style>
 	</head>
 
 	<body>
+		<div class="header">
+			<span>CS:GO Skin Screenshots<span>
+		</div>
 		<div id="inventory">
 			<ul>
-				{% for weapon in weapons %}
-					<li>
-						<div>{{ weapon.class }}</div>
-						<div>{{ weapon.paint }}</div>
-						<div>{{ weapon.seed }}</div>
-						<div>{{ weapon.wear }}</div>
-						<div id="weapon_playside_{{ loop.index }}">
+			{% for weapon in weapons %}
+				<li>
+					<div class="row">
+						<div class="number">#{{ loop.index }}</div>
+						<div class="info">
+							<div class="weaponClass">{{ weapon.class }}</div>
+							<div class="paint">paint: {{ weapon.paint }}</div>
+							<div class="seed">seed: {{ weapon.seed }}</div>
+							<div class="wear">wear: {{ weapon.wear }}</div>
+						</div>
+						<div class="weapon_thumbnail playside" id="weapon_playside_{{ loop.index }}">
 							<img src="/preloader.gif">
 						</div>
-						<div id="weapon_inspect_{{ loop.index }}">
+						<div class="weapon_thumbnail inspect" id="weapon_inspect_{{ loop.index }}">
 							<img src="/preloader.gif">
 						</div>
-					</li>
-				{% endfor %}
+					</div>
+				</li>
+			{% endfor %}
 			</ul>
 		</div>
 
@@ -31,7 +77,7 @@
 				$.get(imageUrl, function(data, textStatus, xhr) {
 					if (xhr.status == 200) {
 						var elementId = '#weapon_' + view + '_' + index;
-						$(elementId).html('<a href="' + weaponUrl + '"><img src="' + imageUrl + '" style="width: 200px; height: 100px"></a>');
+						$(elementId).html('<a href="' + weaponUrl + '"><img src="' + imageUrl + '"></a>');
 					} else if (xhr.status == 202) {
 						setTimeout(function() {
 							loadImage(index, weapon, paint, float, seed, view);
