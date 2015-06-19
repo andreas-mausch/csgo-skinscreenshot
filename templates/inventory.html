@@ -38,15 +38,15 @@
 					} else if (xhr.status == 202) {
 						setTimeout(function() {
 							loadImage(index, weapon, paint, float, seed, view);
-						}, 1000);
+						}, 3000);
 					}
 				});
 			}
 
-			{% for weapon in weapons %}
-				loadImage({{ loop.index }}, "{{ weapon.class }}", {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }}, "playside");
-				loadImage({{ loop.index }}, "{{ weapon.class }}", {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }}, "inspect");
-			{% endfor %}
+		{% for weapon in weapons %}
+			loadImage({{ loop.index }}, "{{ weapon.class }}", {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }}, "playside");
+			loadImage({{ loop.index }}, "{{ weapon.class }}", {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }}, "inspect");
+		{% endfor %}
 		</script>
 	</body>
 </html>
