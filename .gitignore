@@ -5,6 +5,3 @@ development screenshots/
 
 sourcemod-plugin/compiled
 csgo-server/sm_changeskin.smx
-
-# private data (steam api key)
-config.py
