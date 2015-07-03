@@ -50,7 +50,7 @@
 			<ul>
 			{% for weapon in weapons %}
 				<li>
-					<div class="row">
+					<div id="item_{{ loop.index }}" class="row">
 						<div class="number">#{{ loop.index }}</div>
 						<div class="info">
 							<div class="weaponClass">{{ weapon.class }}</div>
@@ -58,7 +58,7 @@
 							<div class="wear">wear: {{ weapon.wear }}</div>
 							<div class="seed">seed: {{ weapon.seed }}</div>
 						</div>
-						<div id="weapon_thumbnails_{{ loop.index }}">
+						<div class="weapon_thumbnails">
 							<input type="button" value="Load screenshots..." onclick="showImages({{ loop.index }}, '{{ weapon.class }}', {{ weapon.paint }}, {{ weapon.wear }}, {{ weapon.seed }})">
 						</div>
 					</div>
@@ -73,8 +73,8 @@
 				var imageUrl = '/image' + weaponUrl;
 				$.get(imageUrl, function(data, textStatus, xhr) {
 					if (xhr.status == 200) {
-						var elementId = '#weapon_' + view + '_' + index;
-						$(elementId).html('<a href="' + weaponUrl + '"><img src="' + imageUrl + '"></a>');
+						var selector = '#item_' + index + ' .weapon_thumbnail.' + view;
+						$(selector).html('<a href="' + weaponUrl + '"><img src="' + imageUrl + '"></a>');
 					} else if (xhr.status == 202) {
 						setTimeout(function() {
 							loadImage(index, weapon, paint, wear, seed, view);
@@ -84,7 +84,7 @@
 			}
 
 			function showImages(index, weapon, paint, wear, seed) {
-				$("#weapon_thumbnails_" + index).html('<div class="weapon_thumbnail playside" id="weapon_playside_' + index + '">	<img src="/preloader.gif"></div><div class="weapon_thumbnail inspect" id="weapon_inspect_' + index + '">	<img src="/preloader.gif"></div>');
+				$("#item_" + index + " .weapon_thumbnails").html('<div class="weapon_thumbnail playside"><img src="/preloader.gif"></div><div class="weapon_thumbnail inspect"><img src="/preloader.gif"></div>');
 
 				loadImage(index, weapon, paint, wear, seed, "playside");
 				loadImage(index, weapon, paint, wear, seed, "inspect");
