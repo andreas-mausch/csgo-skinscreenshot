@@ -1,0 +1,5 @@
+Pillow
+python3-pika
+Flask
+Flask-API
+requests
