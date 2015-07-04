@@ -1,6 +1,6 @@
 import config
 import csgo
-import csgo-win32
+import csgowin32
 import messagequeue
 import os.path
 import pika
@@ -8,12 +8,12 @@ import screenshot
 import time
 
 def takeScreenshot(skin):
-	csgo-win32.focusCounterStrikeWindow()
-	csgo-win32.executeConsoleCommand("sm_teleport 74 384 11851 20 0 0")
-	csgo-win32.executeConsoleCommand("sm_changeskin " + skin)
+	csgowin32.focusCounterStrikeWindow()
+	csgowin32.executeConsoleCommand("sm_teleport 74 384 11851 20 0 0")
+	csgowin32.executeConsoleCommand("sm_changeskin " + skin)
 	time.sleep(5)
 	screenshot.saveScreenshot(csgo.screenshotFilename(skin, "playside"))
-	csgo-win32.sendKey(ord('F'))
+	csgowin32.sendKey(ord('F'))
 	time.sleep(2)
 	screenshot.saveScreenshot(csgo.screenshotFilename(skin, "inspect"))
 
