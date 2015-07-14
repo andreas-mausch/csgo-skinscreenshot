@@ -7,15 +7,26 @@ import pika
 import screenshot
 import time
 
+def saveScreenshot(skin, view):
+	screenshot.saveScreenshot(csgo.screenshotFilename(skin, view), csgo.thumbnailFilename(skin, view))
+
 def takeScreenshot(skin):
 	csgowin32.focusCounterStrikeWindow()
-	csgowin32.executeConsoleCommand("sm_teleport 74 384 11851 20 0 0")
+#	dust2
+#	csgowin32.executeConsoleCommand("sm_teleport -1548 -339 195 0 104 0")
+#	screenshotmap_crashz_v2
+#	csgowin32.executeConsoleCommand("sm_teleport -103 -1161 -200 0 -74 0")
+	csgowin32.openConsole()
+	csgowin32.executeConsoleCommand("sm_teleport -103 -1161 -200 -86 -114 0")
 	csgowin32.executeConsoleCommand("sm_changeskin " + skin)
-	time.sleep(5)
-	screenshot.saveScreenshot(csgo.screenshotFilename(skin, "playside"))
+	csgowin32.executeConsoleCommand("clear")
+	csgowin32.executeConsoleCommand("say " + skin)
+	csgowin32.closeConsole()
+	time.sleep(3)
+	saveScreenshot(skin, "playside")
 	csgowin32.sendKey(ord('F'))
 	time.sleep(2)
-	screenshot.saveScreenshot(csgo.screenshotFilename(skin, "inspect"))
+	saveScreenshot(skin, "inspect")
 
 def screenshotsExists(skin):
 	return os.path.isfile(csgo.screenshotFilename(skin, "playside")) and os.path.isfile(csgo.screenshotFilename(skin, "inspect"))

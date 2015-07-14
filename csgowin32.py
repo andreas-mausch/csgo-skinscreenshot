@@ -26,7 +26,7 @@ def keyUp(vk):
 
 def sendKey(vk):
 	keyDown(vk)
-	time.sleep(0.02)
+	time.sleep(0.01)
 	keyUp(vk)
 
 def sendString(string):
@@ -52,11 +52,16 @@ def sendString(string):
 
 def toggleConsole():
 	sendKey(win32con.VK_F9)
-	time.sleep(0.5)
+	time.sleep(0.2)
+
+def openConsole():
+	toggleConsole()
+	time.sleep(0.3)
+
+def closeConsole():
+	toggleConsole()
 
 def executeConsoleCommand(command):
-	toggleConsole()
 	sendString(command)
 	sendKey(win32con.VK_RETURN)
-	time.sleep(0.25)
-	toggleConsole()
+	time.sleep(0.05)
