@@ -112,6 +112,12 @@ cd ./client/csgo/
 python csgo-skinscreenshot.py
 ```
 
+# Todo
+
+- Stickers
+- Nametags
+- Gloves
+
 # Links
 
 - Schema: https://raw.githubusercontent.com/SteamDatabase/SteamTracking/b5cba7a22ab899d6d423380cff21cec707b7c947/ItemSchema/CounterStrikeGlobalOffensive.json
