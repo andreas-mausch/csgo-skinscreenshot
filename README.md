@@ -72,7 +72,7 @@ docker run -it --rm -e RABBITMQ_NODENAME=rabbitmq --name rabbitmq -p 15672:15672
 # Web Frontend
 
 ```bash
-docker build --tag csgo-skinscreenshot-webfrontend ./client/
+docker build --file=./frontend/Dockerfile --tag csgo-skinscreenshot-webfrontend ./client/
 docker run -it --rm -p 5000:5000 csgo-skinscreenshot-webfrontend
 ```
 
@@ -81,6 +81,7 @@ docker run -it --rm -p 5000:5000 csgo-skinscreenshot-webfrontend
 These scripts are meant to be executed on the same machine the CS:GO Windows client runs.
 
 ```
+cd ./client/csgo/
 python csgo-skinscreenshot.py
 ```
 

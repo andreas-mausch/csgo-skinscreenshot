@@ -1,11 +1,11 @@
-import config
-import csgo
 import csgowin32
-import messagequeue
 import os.path
 import pika
 import screenshot
 import time
+from .. import config
+from .. import csgo
+from .. import messagequeue
 
 def saveScreenshot(skin, view):
 	screenshot.saveScreenshot(csgo.screenshotFilename(skin, view), csgo.thumbnailFilename(skin, view))
