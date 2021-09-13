@@ -28,7 +28,11 @@ RUN wget --quiet -P /opt/ https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.
     tar xf /opt/sourcemod-*-linux.tar.gz -C /opt/csgo/csgo && \
     rm /opt/sourcemod-*-linux.tar.gz
 
-ADD sm_changeskin.smx /opt/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx
+# Change skin plugin
+ADD sm_changeskin.sp /opt/csgo/csgo/addons/sourcemod/scripting/
+RUN /opt/csgo/csgo/addons/sourcemod/scripting/spcomp /opt/csgo/csgo/addons/sourcemod/scripting/sm_changeskin.sp -o /opt/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx
+
+# CS:GO Server config
 ADD server.cfg /opt/csgo/csgo/cfg/server.cfg
 ADD gamemode_competitive_server.cfg /opt/csgo/csgo/cfg/gamemode_competitive_server.cfg
 
