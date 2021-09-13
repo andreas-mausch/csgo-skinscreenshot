@@ -29,7 +29,7 @@ The Sourcemod plugin will be copied and compiled as part of the `docker build`.
 To build the image, run this:
 
 ```bash
-docker build --file=server/Dockerfile --progress=plain --tag csgo-server-with-changeskin .
+docker build --progress=plain --tag csgo-server-with-changeskin ./server/
 ```
 
 To start a CS:GO server:

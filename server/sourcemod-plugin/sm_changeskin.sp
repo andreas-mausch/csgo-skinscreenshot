@@ -25,7 +25,7 @@ public OnPluginStart()
 	{
 		if (!IsClientInGame(client))
 			continue;
-			
+
 		OnClientPutInServer(client);
 	}
 }
@@ -202,18 +202,18 @@ public Action:Pasado(Handle:timer, Handle:pack)
 {
 	new weapon;
 	new client
-    
+
 	ResetPack(pack);
 	weapon = EntRefToEntIndex(ReadPackCell(pack));
 	client = ReadPackCell(pack);
-    
+
 	if(weapon == INVALID_ENT_REFERENCE || !IsClientInGame(client) || !IsPlayerAlive(client)) return;
-	
+
 	if(weapon < 1 || !IsValidEdict(weapon) || !IsValidEntity(weapon)) return;
-	
+
 	if (GetEntProp(weapon, Prop_Send, "m_hPrevOwner") > 0 || (GetEntProp(weapon, Prop_Send, "m_iItemIDHigh") == 0 && GetEntProp(weapon, Prop_Send, "m_iItemIDLow") == 2048))
 		return;
-		
+
 	decl String:Classname[64];
 	GetEdictClassname(weapon, Classname, 64);
 	if(StrEqual(Classname, "weapon_taser"))
