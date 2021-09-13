@@ -3,11 +3,8 @@
 #include <cstrike>
 #include <sdkhooks>
 #include <clientprefs>
-#include <multicolors>
 
 #undef REQUIRE_PLUGIN
-#include <lastrequest>
-
 #define MAX_PAINTS 800
 
 public Plugin:myinfo =
