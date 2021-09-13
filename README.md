@@ -57,6 +57,12 @@ Now, connect to the server (replace IP with your server IP):
 password 123456; connect 192.168.178.49
 ```
 
+# Web Frontend
+
+```bash
+docker build --tag csgo-skinscreenshot-webfrontend ./client/
+```
+
 # Links
 
 - https://www.unknowncheats.me/wiki/Counter_Strike_Global_Offensive:Skin_Changer

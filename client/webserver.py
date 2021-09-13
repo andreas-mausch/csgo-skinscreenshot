@@ -5,7 +5,7 @@ import messagequeue
 import os
 import requests
 from flask import Flask, Response, request, send_from_directory, render_template
-from flask.ext.api import status
+from flask_api import status
 
 app = Flask(__name__)
 
