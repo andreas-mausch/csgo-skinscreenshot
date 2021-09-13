@@ -1,0 +1,25 @@
+@startuml
+actor User
+participant "Web-Frontend" as WebFrontend
+participant Filesystem
+participant RabbitMQ
+participant "Python script" as Python
+participant "CS:GO Client" as GameClient
+participant "CS:GO Server" as GameServer
+participant "sm_changeskin" as changeskin
+
+note over changeskin: sm_changeskin,\nsm_teleport
+
+User -> WebFrontend: Requests skin screenshot
+WebFrontend -> RabbitMQ: Sends message
+RabbitMQ <-- Python: Consumes message
+Python -> GameClient: Changes skin via console
+GameClient <-> GameServer
+GameServer <-> changeskin: Handles custom console commands
+Python -> GameClient: Takes screenshot
+Python -> Filesystem: Saves screenshot
+
+WebFrontend <-> User: Periodically updates
+WebFrontend -> Filesystem: Reads screenshot
+WebFrontend -> User: Sends screenshot
+@enduml
