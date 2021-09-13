@@ -5,11 +5,13 @@
 The Sourcemod plugin will let you change your skin to any custom paint, float and seed.
 It also lets you teleport to any point in the map.
 
-# Stattrak values
+Note: float and wear is the same.
+
+## Stattrak values
 
 The value can either be the amount of kills or -1 for non-stattrak weapons.
 
-# Quality values
+## Quality values
 
 The field can have the following values:
 
