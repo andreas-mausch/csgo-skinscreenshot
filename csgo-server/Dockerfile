@@ -34,6 +34,9 @@ RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145
     tar xf sourcemod-*-linux.tar.gz -C ./csgo/csgo && \
     rm sourcemod-*-linux.tar.gz
 
+# Disable FollowCSGOServerGuidelines
+RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
+
 # Change skin plugin
 COPY sourcemod-plugin/sm_changeskin.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
 RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_changeskin.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx
