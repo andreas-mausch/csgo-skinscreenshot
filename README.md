@@ -9,6 +9,7 @@ Examples (type into game console):
 
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
+# stattrak can either be the amount of kills or -1 for non-stattrak weapons
 sm_changeskin weapon_usp_silencer 415 0.0 0 0 0
 # Arguments are: sm_teleport (x, y, z) (viewangle x, y, z)
 sm_teleport -1548 -339 195 0 104 0
