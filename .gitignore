@@ -4,4 +4,4 @@ screenshots/
 development screenshots/
 
 sourcemod-plugin/compiled
-csgo-server/sm_changeskin.smx
+server/sm_changeskin.smx

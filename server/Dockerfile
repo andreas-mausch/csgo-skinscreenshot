@@ -23,8 +23,8 @@ RUN mkdir -p csgo && \
         +quit
 
 # CS:GO Server config
-COPY csgo-server/server.cfg /home/steam/csgo/csgo/cfg/server.cfg
-COPY csgo-server/gamemode_competitive_server.cfg /home/steam/csgo/csgo/cfg/gamemode_competitive_server.cfg
+COPY server/server.cfg /home/steam/csgo/csgo/cfg/server.cfg
+COPY server/gamemode_competitive_server.cfg /home/steam/csgo/csgo/cfg/gamemode_competitive_server.cfg
 
 # Metamod and Sourcemod
 RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145-linux.tar.gz && \
