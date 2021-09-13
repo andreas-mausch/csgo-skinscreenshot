@@ -60,7 +60,7 @@ docker build --progress=plain --tag csgo-server-with-changeskin ./server/
 To start a CS:GO server:
 
 ```bash
-docker run -it --rm -p 27015:27015/udp csgo-server-with-changeskin -ip 0.0.0.0 -console -usercon -insecure +game_type 0 +game_mode 1 +map de_vertigo
+docker run -it --rm -p 27015:27015/udp -p 27015:27015/tcp csgo-server-with-changeskin -ip 0.0.0.0 -console -usercon -insecure +game_type 0 +game_mode 1 +map de_vertigo
 ```
 
 Get a shell:
