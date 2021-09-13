@@ -1,1 +1,1 @@
-docker build --progress=plain --tag csgo-server-changeskin .
+docker build --progress=plain --tag csgo-server-with-changeskin .
