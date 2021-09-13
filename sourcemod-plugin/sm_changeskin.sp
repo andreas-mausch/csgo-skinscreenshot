@@ -13,7 +13,7 @@ public Plugin:myinfo =
 	author = "Andreas Mausch",
 	description = "",
 	version = "1.0",
-	url = "http://andreas-mausch.github.io/"
+	url = "https://andreas-mausch.de/"
 };
 
 public OnPluginStart()
