@@ -57,10 +57,29 @@ Now, connect to the server (replace IP with your server IP):
 password 123456; connect 192.168.178.49
 ```
 
+# RabbitMQ
+
+The web frontend will produce messages, which screenshots are to be taken next.
+
+The Python script on client site will consume those messages and take screenshots to the file system.
+
+```bash
+docker run -it --rm -e RABBITMQ_NODENAME=rabbitmq --name rabbitmq -p 15672:15672 -p 5672:5672 rabbitmq:3-management
+```
+
 # Web Frontend
 
 ```bash
 docker build --tag csgo-skinscreenshot-webfrontend ./client/
+docker run -it --rm -p 5000:5000 csgo-skinscreenshot-webfrontend
+```
+
+# Client-side scripts
+
+These scripts are meant to be executed on the same machine the CS:GO Windows client runs.
+
+```
+python csgo-skinscreenshot.py
 ```
 
 # Links
