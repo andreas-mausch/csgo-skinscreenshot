@@ -1,3 +1,5 @@
+![PlantUML sequence diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/andreas-mausch/csgo-skinscreenshot/master/sequence.plantuml)
+
 # Sourcemod plugin
 
 The Sourcemod plugin will let you change your skin to any custom paint, float and seed.
