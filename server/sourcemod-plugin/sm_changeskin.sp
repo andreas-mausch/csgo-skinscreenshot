@@ -158,19 +158,22 @@ ChangeSkinTo(client, weapon_entity, new_paint, Float:new_wear, new_stattrak, new
 			case 509: strcopy(Classname, 64, "weapon_knife_tactical");
 			case 515: strcopy(Classname, 64, "weapon_knife_butterfly");
 		}
-		ChangePaint2(weapon_entity, new_paint, new_wear, new_stattrak, new_quality, new_seed);
+		ChangePaint2(client, weapon_entity, new_paint, new_wear, new_stattrak, new_quality, new_seed);
 		FakeClientCommand(client, "use %s", Classname);
 	}
 	else ReplyToCommand(client, "You cant use a paint in this weapon");
 }
 
-ChangePaint2(weapon_entity, new_paint, Float:new_wear, new_stattrak, new_quality, new_seed)
+ChangePaint2(client, weapon_entity, new_paint, Float:new_wear, new_stattrak, new_quality, new_seed)
 {
 	new m_iItemIDHigh = GetEntProp(weapon_entity, Prop_Send, "m_iItemIDHigh");
 	new m_iItemIDLow = GetEntProp(weapon_entity, Prop_Send, "m_iItemIDLow");
 
-	SetEntProp(weapon_entity,Prop_Send,"m_iItemIDLow",2048);
-	SetEntProp(weapon_entity,Prop_Send,"m_iItemIDHigh",0);
+	SetEntProp(weapon_entity, Prop_Send, "m_iItemIDLow", 2048);
+	SetEntProp(weapon_entity, Prop_Send, "m_iItemIDHigh", 0);
+	SetEntProp(weapon_entity, Prop_Send, "m_iAccountID", GetSteamAccountID(client, true));
+	SetEntPropEnt(weapon_entity, Prop_Send, "m_hOwnerEntity", client);
+	SetEntPropEnt(entity, Prop_Send, "m_hPrevOwner", -1);
 
 	SetEntProp(weapon_entity, Prop_Send, "m_nFallbackPaintKit", new_paint);
 	SetEntPropFloat(weapon_entity, Prop_Send, "m_flFallbackWear", new_wear);
