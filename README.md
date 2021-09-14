@@ -7,11 +7,27 @@ It also lets you teleport to any point in the map.
 
 Note: float and wear is the same.
 
-## Stattrak values
+## sm_teleport
+
+Examples (type into game console):
+
+```
+# Arguments are: sm_teleport (x, y, z) (viewangle x, y, z)
+sm_teleport -1548 -339 195 0 104 0
+```
+
+## sm_changeskin
+
+```
+# Arguments are: sm_changeskin weapon paint wear stattrak quality seed
+sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
+```
+
+### Stattrak values
 
 The value can either be the amount of kills or -1 for non-stattrak weapons.
 
-## Quality values
+### Quality values
 
 The field can have the following values:
 
@@ -32,14 +48,28 @@ The field can have the following values:
 > Defines the quality of this weapon. Qualities 4 and 11 are the same as 0.  
 > Knives always use quality 3 which makes the "★" appear.
 
-Examples (type into game console):
+## sm_gloves
 
 ```
-# Arguments are: sm_changeskin weapon paint wear stattrak quality seed
-sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
-# Arguments are: sm_teleport (x, y, z) (viewangle x, y, z)
-sm_teleport -1548 -339 195 0 104 0
+# Sport Gloves | Vice
+sm_gloves 5030 10048 0.0
+# Sport Gloves | Amphibious
+sm_gloves 5030 10045 0.0
+# Sport Gloves | Omega
+sm_gloves 5030 10047 0.0
+# Sport Gloves | Pandora's Box
+sm_gloves 5030 10037 0.0
+# Sport Gloves | Hedge Maze
+sm_gloves 5030 10038 0.0
+# Broken Fang Gloves | Jade
+sm_gloves 5035 10085 0.0
+# Hand Wraps | CAUTION!
+sm_gloves 5032 10084 0.0
+# Driver Gloves | Overtake
+sm_gloves 5031 10043 0.0
 ```
+
+See a list for the *Item Definition Index* below (Economy_Weapon_IDs).
 
 # CS:GO Server (with Sourcemod plugin)
 
@@ -117,11 +147,13 @@ python csgo-skinscreenshot.py
 - Stickers
 - Nametags
 - Gloves
+- List of Paint Kits aka Finish Catalog
 
 # Links
 
 - Schema: https://raw.githubusercontent.com/SteamDatabase/SteamTracking/b5cba7a22ab899d6d423380cff21cec707b7c947/ItemSchema/CounterStrikeGlobalOffensive.json
 - List of paint kits: https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/scripts/items/items_game.txt
 - https://www.unknowncheats.me/wiki/Counter_Strike_Global_Offensive:Skin_Changer
+- https://www.unknowncheats.me/wiki/Counter_Strike_Global_Offensive:Economy_Weapon_IDs
 - https://forums.alliedmods.net/showthread.php?t=261263
 - https://github.com/quasemago/CSGO_WeaponStickers/blob/master/addons/sourcemod/scripting/csgo_weaponstickers.sp
