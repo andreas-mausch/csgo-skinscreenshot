@@ -6,16 +6,16 @@ participant RabbitMQ
 participant "Client-side python script" as ClientSidePythonScripts
 participant "CS:GO Client" as GameClient
 participant "CS:GO Server" as GameServer
-participant "sm_changeskin" as changeskin
+participant "Sourcemod Plugins" as SourcemodPlugins
 
-note over changeskin: sm_changeskin,\nsm_teleport
+note over SourcemodPlugins: sm_changeskin,\nsm_gloves,\nsm_sticker\nsm_teleport
 
 User -> WebFrontend: Requests skin screenshot
 WebFrontend -> RabbitMQ: Sends message
 RabbitMQ <-- ClientSidePythonScripts: Consumes message
 ClientSidePythonScripts -> GameClient: Changes skin via console
 GameClient <-> GameServer
-GameServer <-> changeskin: Handles custom console commands
+GameServer <-> SourcemodPlugins: Handles custom console commands
 ClientSidePythonScripts -> GameClient: Takes screenshot
 ClientSidePythonScripts -> Filesystem: Saves screenshot
 
