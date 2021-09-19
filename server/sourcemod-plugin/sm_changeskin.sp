@@ -58,11 +58,18 @@ public Action:ChangeSkin(client, args)
 	new_quality = StringToInt(arg5);
 	new_seed = StringToInt(arg6);
 
+	PrintToServer("ChangeSkin weapon=%s, paint=%d, wear=%f, stattrak=%d, quality=%d, seed=%d", new_weapon, new_paint, new_wear, new_stattrak, new_quality, new_seed);
+
 	RemoveWeapons(client);
 	new weapon_entity = GivePlayerItem(client, new_weapon);
-	EquipPlayerWeapon(client, weapon_entity);
 
-	PrintToServer("ChangeSkin weapon=%s, paint=%d, wear=%f, stattrak=%d, quality=%d, seed=%d", new_weapon, new_paint, new_wear, new_stattrak, new_quality, new_seed);
+	if (weapon_entity == -1)
+	{
+		ReplyToCommand(client, "Couldn't give item to player: %s", new_weapon);
+		return Plugin_Handled;
+	}
+
+	EquipPlayerWeapon(client, weapon_entity);
 
 	ChangeSkinTo(client, weapon_entity, new_paint, new_wear, new_stattrak, new_quality, new_seed);
 
