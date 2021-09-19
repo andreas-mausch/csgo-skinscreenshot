@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get install -yq curl wget lib32gcc1 lib32stdc++6 && \
+    apt-get install -yq curl wget unzip lib32gcc1 lib32stdc++6 && \
 	apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN groupadd --gid=1001 steam && useradd --uid=1001 --create-home --no-log-init -r --gid steam steam
@@ -33,6 +33,12 @@ RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145
     wget --quiet https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6510-linux.tar.gz && \
     tar xf sourcemod-*-linux.tar.gz -C ./csgo/csgo && \
     rm sourcemod-*-linux.tar.gz
+
+# PTaH Additional CS:GO Hooks and Natives
+# https://github.com/komashchenko/PTaH
+RUN wget --quiet https://ptah.zizt.ru/files/PTaH-V1.1.3-build20-linux.zip && \
+    unzip PTaH-*-linux.zip -d ./csgo/csgo && \
+    rm PTaH-*-linux.zip
 
 # Disable FollowCSGOServerGuidelines
 RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
