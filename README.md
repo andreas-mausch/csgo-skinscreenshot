@@ -21,8 +21,33 @@ sm_teleport -1548 -339 195 0 104 0
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
 sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
+# AK-47 | Case Hardened Blue Gem
+sm_changeskin weapon_ak47 44 0.0 -1 0 661
+# AK-47 | Wild Lotus
+sm_changeskin weapon_ak47 724 0.0 -1 0 0
+# AWP | Dragon Lore
+sm_changeskin weapon_awp 344 0.0 -1 0 0
+# AWP | Gungnir
+sm_changeskin weapon_awp 756 0.0 -1 0 0
+# AWP | Medusa
+sm_changeskin weapon_awp 446 0.0 -1 0 0
+```
+
+Knives
+
+```
 # Karambit | Lore
 sm_changeskin weapon_knife_karambit 561 0.0 -1 3 0
+# M9 Bayonet | Emerald Gamma Doppler
+sm_changeskin weapon_knife_m9_bayonet 568 0.0 -1 3 0
+# Bayonet | Ruby Doppler
+sm_changeskin weapon_bayonet 415 0.0 -1 3 0
+# Flip Knife | Marble Fire&Ice
+sm_changeskin weapon_knife_flip 413 0.0 -1 3 412
+# Huntsman | Case Hardened Blue Gem
+sm_changeskin weapon_knife_tactical 44 0.0 -1 3 703
+# Huntsman | Case Hardened Dick Pattern
+sm_changeskin weapon_knife_tactical 44 0.0 -1 3 190
 ```
 
 ### Stattrak values
@@ -67,6 +92,8 @@ sm_gloves 5030 10038 0.0
 sm_gloves 5035 10085 0.0
 # Hand Wraps | CAUTION!
 sm_gloves 5032 10084 0.0
+# Driver Gloves | King Snake
+sm_gloves 5031 10041 0.0
 # Driver Gloves | Overtake
 sm_gloves 5031 10043 0.0
 ```
