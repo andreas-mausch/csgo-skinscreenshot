@@ -173,10 +173,9 @@ python csgo-skinscreenshot.py
 
 # Todo
 
-- Stickers
 - Nametags
-- Gloves
 - List of Paint Kits aka Finish Catalog
+- List of Sticker IDs
 
 # Links
 

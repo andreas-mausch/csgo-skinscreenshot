@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get install -yq curl wget unzip lib32gcc1 lib32stdc++6 && \
+    apt-get install -yq build-essential curl wget unzip lib32gcc1 lib32stdc++6 && \
 	apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN groupadd --gid=1001 steam && useradd --uid=1001 --create-home --no-log-init -r --gid steam steam
@@ -46,6 +46,9 @@ RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t
 # Change skin plugin
 COPY sourcemod-plugin/sm_changeskin.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
 RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_changeskin.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx
+
+COPY sourcemod-plugin/sm_sticker.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
+RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_sticker.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_sticker.smx
 
 EXPOSE 27015
 ENTRYPOINT ["./csgo/srcds_run"]
