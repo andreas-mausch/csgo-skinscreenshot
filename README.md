@@ -1,8 +1,12 @@
+A combination of Sourcemod plugins and Python scripts
+to automate taking screenshot of any skin.
+
 ![PlantUML sequence diagram](https://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/andreas-mausch/csgo-skinscreenshot/master/sequence.plantuml)
 
-# Sourcemod plugin
+# Sourcemod plugins
 
-The Sourcemod plugin will let you change your skin to any custom paint, float and seed.
+The Sourcemod plugins will let you change your skin to any custom paint, float and seed.
+You can choose your favorite stickers and gloves.
 It also lets you teleport to any point in the map.
 
 Note: float and wear is the same.
@@ -78,6 +82,8 @@ The field can have the following values:
 ## sm_gloves
 
 ```
+# Arguments are: sm_gloves index paint wear
+
 # Sport Gloves | Vice
 sm_gloves 5030 10048 0.0
 # Sport Gloves | Amphibious
@@ -99,6 +105,16 @@ sm_gloves 5031 10043 0.0
 ```
 
 See a list for the *Item Definition Index* below (Economy_Weapon_IDs).
+
+## sm_sticker
+
+```
+# Arguments are: sm_sticker slot index wear scale rotation
+# iBUYPOWER Holo
+sm_sticker 0 60 0.0 1.0 0.0
+# Titan Holo
+sm_sticker 1 76 0.0 1.0 0.0
+```
 
 # CS:GO Server (with Sourcemod plugin)
 
