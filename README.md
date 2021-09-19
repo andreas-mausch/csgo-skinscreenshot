@@ -21,6 +21,8 @@ sm_teleport -1548 -339 195 0 104 0
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
 sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
+# Karambit | Lore
+sm_changeskin weapon_knife_karambit 561 0.0 -1 3 0
 ```
 
 ### Stattrak values
