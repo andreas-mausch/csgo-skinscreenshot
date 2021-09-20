@@ -208,10 +208,17 @@ python csgo-skinscreenshot.py
 - List of Sticker IDs
 - List of Player Models
 
+# List player models
+
+```bash
+curl https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/resource/csgo_english.txt | grep --ignore-case CSGO_Customplayer_ | grep --invert-match _Desc > player_models.txt
+```
+
 # Links
 
 - Schema: https://raw.githubusercontent.com/SteamDatabase/SteamTracking/b5cba7a22ab899d6d423380cff21cec707b7c947/ItemSchema/CounterStrikeGlobalOffensive.json
 - List of paint kits: https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/scripts/items/items_game.txt
+- English texts: https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/resource/csgo_english.txt
 - https://www.unknowncheats.me/wiki/Counter_Strike_Global_Offensive:Skin_Changer
 - https://www.unknowncheats.me/wiki/Counter_Strike_Global_Offensive:Economy_Weapon_IDs
 - https://forums.alliedmods.net/showthread.php?t=261263
