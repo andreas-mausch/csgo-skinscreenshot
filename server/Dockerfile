@@ -4,7 +4,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
     apt-get install -yq build-essential curl wget unzip lib32gcc1 lib32stdc++6 && \
-	apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+  apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN groupadd --gid=1001 steam && useradd --uid=1001 --create-home --no-log-init -r --gid steam steam
 USER steam
