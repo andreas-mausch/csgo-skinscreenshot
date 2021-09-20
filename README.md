@@ -25,7 +25,7 @@ sm_teleport -1548 -339 195 0 104 0
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
 sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
-# M4A1 | Printstream
+# M4A1-S | Printstream
 sm_changeskin weapon_m4a1_silencer 984 0.0 -1 0 0
 # AK-47 | Case Hardened Blue Gem
 sm_changeskin weapon_ak47 44 0.0 -1 0 661
@@ -129,6 +129,8 @@ sm_player_model models/player/custom_player/legacy/tm_professional_varf4.mdl
 # Reset back to default
 sm_player_model
 ```
+
+Check [player_models.txt](player_models.txt) for all available models.
 
 # CS:GO Server (with Sourcemod plugin)
 
