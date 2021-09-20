@@ -208,12 +208,17 @@ python csgo-skinscreenshot.py
 - Nametags
 - List of Paint Kits aka Finish Catalog
 - List of Sticker IDs
-- List of Player Models
 
 # List player models
 
 ```bash
 curl https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/resource/csgo_english.txt | grep --ignore-case CSGO_Customplayer_ | grep --invert-match _Desc > player_models.txt
+```
+
+Or, inside the server container:
+
+```bash
+vpk --list ./csgo/csgo/pak01_dir.vpk | grep models/player/custom_player/legacy
 ```
 
 # Links

@@ -3,7 +3,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update && \
-    apt-get install -yq build-essential curl wget unzip lib32gcc1 lib32stdc++6 && \
+    apt-get install -yq build-essential curl wget unzip python3 python3-pip lib32gcc1 lib32stdc++6 && \
     apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN groupadd --gid=1001 steam && useradd --uid=1001 --create-home --no-log-init -r --gid steam steam
@@ -21,6 +21,10 @@ RUN mkdir -p csgo && \
         +force_install_dir /home/steam/csgo \
         +app_update 740 validate \
         +quit
+
+# VPK
+ENV PATH="${PATH}:/home/steam/.local/bin"
+RUN pip install vpk==1.3.3
 
 # CS:GO Server config
 COPY server.cfg /home/steam/csgo/csgo/cfg/server.cfg
