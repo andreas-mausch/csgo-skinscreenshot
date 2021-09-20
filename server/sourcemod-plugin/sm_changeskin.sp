@@ -5,6 +5,7 @@
 #include <clientprefs>
 
 #include "sm_gloves.sp"
+#include "sm_player_model.sp"
 #include "sm_teleport.sp"
 
 #undef REQUIRE_PLUGIN
@@ -23,6 +24,7 @@ public OnPluginStart()
 {
 	RegConsoleCmd("sm_changeskin", ChangeSkin);
 	RegConsoleCmd("sm_gloves", ChangeGloves);
+	RegConsoleCmd("sm_player_model", ChangePlayerModel);
 	RegConsoleCmd("sm_teleport", Teleport);
 
 	for (new client = 1; client <= MaxClients; client++)

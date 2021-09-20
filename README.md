@@ -25,6 +25,8 @@ sm_teleport -1548 -339 195 0 104 0
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
 sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
+# M4A1 | Printstream
+sm_changeskin weapon_m4a1_silencer 984 0.0 -1 0 0
 # AK-47 | Case Hardened Blue Gem
 sm_changeskin weapon_ak47 44 0.0 -1 0 661
 # AK-47 | Wild Lotus
@@ -116,6 +118,16 @@ sm_sticker 0 60 0.0 1.0 0.0
 sm_sticker 1 76 0.0 1.0 0.0
 ```
 
+## sm_player_model
+
+```
+# Arguments are: sm_player_model [.mdl]
+# Sir Bloody Loudmouth Darryl | The Professionals
+sm_player_model models/player/custom_player/legacy/tm_professional_varf4.mdl
+# Reset back to default
+sm_player_model
+```
+
 # CS:GO Server (with Sourcemod plugin)
 
 **WARNING**: This server sets FollowCSGOServerGuidelines to *No*.
@@ -190,9 +202,9 @@ python csgo-skinscreenshot.py
 # Todo
 
 - Nametags
-- Player models and arms
 - List of Paint Kits aka Finish Catalog
 - List of Sticker IDs
+- List of Player Models
 
 # Links
 

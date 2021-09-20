@@ -8,7 +8,7 @@ participant "CS:GO Client" as GameClient
 participant "CS:GO Server" as GameServer
 participant "Sourcemod Plugins" as SourcemodPlugins
 
-note over SourcemodPlugins: sm_changeskin,\nsm_gloves,\nsm_sticker\nsm_teleport
+note over SourcemodPlugins: sm_changeskin,\nsm_gloves,\nsm_sticker,\nsm_player_model,\nsm_teleport
 
 User -> WebFrontend: Requests skin screenshot
 WebFrontend -> RabbitMQ: Sends message
