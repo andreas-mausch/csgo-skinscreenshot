@@ -1,31 +1,28 @@
-public Action:ChangeGloves(client, args)
-{
-  if (GetCmdArgs() != 3)
-  {
+public Action:ChangeGloves(client, args) {
+  if (GetCmdArgs() != 3) {
     ReplyToCommand(client, "Need 3 arguments (index, paint, wear)");
     return Plugin_Handled;
   }
 
-  new String:indexString[64], String:paintString[64], String:wearString[64], index, paint, Float:wear;
+  char indexString[64], paintString[64], wearString[64];
   GetCmdArg(1, indexString, sizeof(indexString));
   GetCmdArg(2, paintString, sizeof(paintString));
   GetCmdArg(3, wearString, sizeof(wearString));
-  index = StringToInt(indexString);
-  paint = StringToInt(paintString);
-  wear = StringToFloat(wearString);
+
+  int index = StringToInt(indexString);
+  int paint = StringToInt(paintString);
+  float wear = StringToFloat(wearString);
 
   PrintToServer("ChangeGloves index=%d, paint=%d, wear=%f", index, paint, wear);
 
   int activeWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
-  if(activeWeapon != -1)
-  {
+  if(activeWeapon != -1) {
     SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", -1);
   }
 
   int gloves = GetEntPropEnt(client, Prop_Send, "m_hMyWearables");
 
-  if(gloves != -1)
-  {
+  if(gloves != -1) {
     AcceptEntityInput(gloves, "KillHierarchy");
   }
 
@@ -41,8 +38,7 @@ public Action:ChangeGloves(client, args)
   DispatchSpawn(gloves);
   SetEntPropEnt(client, Prop_Send, "m_hMyWearables", gloves);
 
-  if(activeWeapon != -1)
-  {
+  if(activeWeapon != -1) {
     new Handle:pack;
     CreateDataTimer(0.2, ResetGloves, pack);
     WritePackCell(pack, client);
@@ -52,17 +48,12 @@ public Action:ChangeGloves(client, args)
   return Plugin_Handled;
 }
 
-public Action:ResetGloves(Handle:timer, Handle:pack)
-{
-  new client;
-  new activeWeapon;
-
+public Action:ResetGloves(Handle:timer, Handle:pack) {
   ResetPack(pack);
-  client = ReadPackCell(pack);
-  activeWeapon = ReadPackCell(pack);
+  int client = ReadPackCell(pack);
+  int activeWeapon = ReadPackCell(pack);
 
-  if(IsClientInGame(client) && IsValidEntity(activeWeapon))
-  {
+  if(IsClientInGame(client) && IsValidEntity(activeWeapon)) {
     SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", activeWeapon);
   }
 }
