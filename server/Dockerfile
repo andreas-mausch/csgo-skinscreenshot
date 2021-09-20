@@ -43,12 +43,11 @@ RUN wget --quiet https://ptah.zizt.ru/files/PTaH-V1.1.3-build20-linux.zip && \
 # Disable FollowCSGOServerGuidelines
 RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
 
-# Change skin plugin
-COPY sourcemod-plugin/sm_changeskin.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
-RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_changeskin.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx
+# Sourcemod plugins
+COPY sourcemod-plugin/*.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
 
-COPY sourcemod-plugin/sm_sticker.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
-RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_sticker.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_sticker.smx
+RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_changeskin.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx && \
+    /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_sticker.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_sticker.smx
 
 EXPOSE 27015
 ENTRYPOINT ["./csgo/srcds_run"]
