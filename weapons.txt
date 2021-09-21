@@ -1,0 +1,54 @@
+                          Item Name                               Give Code     
+Kevlar Armor (Vest, No Helmet)                               item_kevlar        
+Kevlar Armor and Helmet                                      item_assaultsuit   
+Defuse Kit                                                   item_defuser       
+Zeus (Taser)                                                 weapon_taser       
+Smoke Grenade                                                weapon_smokegrenade
+Flashbang Grenade                                            weapon_flashbang   
+High Explosive Grenade                                       weapon_hegrenade   
+Incendiary Grenade                                           weapon_incgrenade  
+Molotov Grenade                                              weapon_molotov     
+Decoy Grenade                                                weapon_decoy       
+AK-47                                                        weapon_ak47        
+AUG                                                          weapon_aug         
+AWP                                                          weapon_awp         
+Bomb (C4)                                                    weapon_c4          
+CZ75-Auto                                                    weapon_cz75a       
+Desert Eagle                                                 weapon_deagle      
+Dual Berettas                                                weapon_elite       
+FAMAS                                                        weapon_famas       
+Five-SeveN                                                   weapon_fiveseven   
+G3SG1 (Terrorist Auto Sniper)                                weapon_g3sg1       
+Galil AR                                                     weapon_galilar     
+Glock-18                                                     weapon_glock       
+P2000 (P2K)                                                  weapon_hkp2000     
+Knife                                                        weapon_knife       
+Golden Knife (Arms Race)                                     weapon_knifegg     
+M249                                                         weapon_m249        
+M4A4                                                         weapon_m4a1        
+M4A1-S (Silenced M4)                                         weapon_m4a1_silence
+MAC-10                                                       weapon_mac10       
+MAG-7                                                        weapon_mag7        
+MP5-SD                                                       weapon_mp5sd       
+MP7                                                          weapon_mp7         
+MP9                                                          weapon_mp9         
+Negev                                                        weapon_negev       
+Nova                                                         weapon_nova        
+P250                                                         weapon_p250        
+P90                                                          weapon_p90         
+Sawed-Off Shotgun                                            weapon_sawedoff    
+SCAR-20 (CT Auto Sniper)                                     weapon_scar20      
+SG 553                                                       weapon_sg556       
+SSG 08 (Scout Sniper)                                        weapon_ssg08       
+TEC-9                                                        weapon_tec9        
+UMP-45                                                       weapon_ump45       
+USP-S                                                        weapon_usp_silencer
+XM1014                                                       weapon_xm1014      
+R8 Revolver                                                  weapon_revolver    
+Rescue Kit (Hostage)                                         item_cutters       
+Dog Tags (Hydra Operation's Kill Confirmed Gamemode)         item_dogtags       
+Medi-Shot (Operation Wildfire)                               weapon_healthshot  
+Tactical Awareness Grenade (Operation Wildfire)              weapon_tagrenade   
+Heavy Assault Suit (War Games)                               item_heavyassaultsu
+Night Vision Goggles                                         item_nvgs          
+Soda Can                                                     item_sodacan       

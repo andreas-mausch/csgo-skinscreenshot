@@ -22,6 +22,7 @@ sm_teleport -1548 -339 195 0 104 0
 
 ## sm_changeskin
 
+Check [weapons.txt](weapons.txt) for all available weapon names.  
 Check [paint_kits.txt](paint_kits.txt) for all available indices.
 
 ```
