@@ -1,44 +1,240 @@
-		"CSGO_CustomPlayer_ct_map_based"						"Local CT Agent"
-		"CSGO_CustomPlayer_t_map_based"							"Local T Agent"
-		"CSGO_CustomPlayer_tm_leet_variantf"					"The Elite Mr. Muhlik | Elite Crew"
-		"CSGO_CustomPlayer_tm_leet_varianti"					"Prof. Shahmat | Elite Crew" 
-		"CSGO_CustomPlayer_tm_leet_varianth"					"Osiris | Elite Crew"
-		"CSGO_CustomPlayer_tm_leet_variantg"					"Ground Rebel  | Elite Crew"
-		"CSGO_CustomPlayer_ctm_fbi_variantb"					"Special Agent Ava | FBI"
-		"CSGO_CustomPlayer_ctm_fbi_varianth"					"Michael Syfers  | FBI Sniper"
-		"CSGO_CustomPlayer_ctm_fbi_variantg"					"Markus Delrow | FBI HRT"
-		"CSGO_CustomPlayer_ctm_fbi_variantf"					"Operator | FBI SWAT"
-		"CSGO_CustomPlayer_ctm_st6_variante"					"Seal Team 6 Soldier | NSWC SEAL"
-		"CSGO_CustomPlayer_ctm_st6_variantm"					"'Two Times' McCoy | USAF TACP"
-		"CSGO_CustomPlayer_ctm_st6_variantg"					"Buckshot | NSWC SEAL"
-		"CSGO_CustomPlayer_ctm_st6_variantk"					"3rd Commando Company | KSK"
-		"CSGO_CustomPlayer_ctm_st6_varianti"					"Lt. Commander Ricksaw | NSWC SEAL"
-        "CSGO_CustomPlayer_ctm_st6_variantj"                    "'Blueberries' Buckshot | NSWC SEAL"
-		"CSGO_CustomPlayer_ctm_st6_variantl"					"'Two Times' McCoy | TACP Cavalry"
-		"CSGO_CustomPlayer_ctm_swat_variante"                   "Cmdr. Mae 'Dead Cold' Jamison | SWAT"
-		"CSGO_CustomPlayer_ctm_swat_variantf"                   "1st Lieutenant Farlow | SWAT"
-		"CSGO_CustomPlayer_ctm_swat_variantg"                   "John 'Van Healen' Kask | SWAT"
- 		"CSGO_CustomPlayer_ctm_swat_varianth"                   "Bio-Haz Specialist | SWAT"
- 		"CSGO_CustomPlayer_ctm_swat_varianti"                   "Sergeant Bombson | SWAT"
-        "CSGO_CustomPlayer_ctm_swat_variantj"                   "Chem-Haz Specialist | SWAT"
-		"CSGO_CustomPlayer_tm_balkan_varianti"					"Maximus | Sabre"
-		"CSGO_CustomPlayer_tm_balkan_variantf"					"Dragomir | Sabre"
-		"CSGO_CustomPlayer_tm_balkan_varianth"					"'The Doctor' Romanov | Sabre"
-		"CSGO_CustomPlayer_tm_balkan_variantg"					"Rezan The Ready | Sabre"
-		"CSGO_CustomPlayer_tm_balkan_variantj"					"Blackwolf | Sabre"
-		"CSGO_CustomPlayer_tm_balkan_variantk"                  "Rezan the Redshirt | Sabre"
-		"CSGO_CustomPlayer_tm_balkan_variantl"					"Dragomir | Sabre Footsoldier"
-		"CSGO_CustomPlayer_ctm_sas_variantf"					"B Squadron Officer | SAS"
-		"CSGO_CustomPlayer_tm_phoenix_varianth"					"Soldier | Phoenix" 
-		"CSGO_CustomPlayer_tm_phoenix_variantf"					"Enforcer | Phoenix"
-		"CSGO_CustomPlayer_tm_phoenix_variantg"					"Slingshot | Phoenix"
-		"CSGO_CustomPlayer_tm_phoenix_varianti"					"Street Soldier | Phoenix"
-        "CSGO_Customplayer_tm_professional_varf"                "Sir Bloody Miami Darryl | The Professionals"
-    	"CSGO_Customplayer_tm_professional_varf1"               "Sir Bloody Silent Darryl | The Professionals"
-        "CSGO_Customplayer_tm_professional_varf2"               "Sir Bloody Skullhead Darryl | The Professionals"
-        "CSGO_Customplayer_tm_professional_varf3"               "Sir Bloody Darryl Royale | The Professionals"
-        "CSGO_Customplayer_tm_professional_varf4"               "Sir Bloody Loudmouth Darryl | The Professionals"
-        "CSGO_Customplayer_tm_professional_varg"                "Safecracker Voltzmann | The Professionals"
-        "CSGO_Customplayer_tm_professional_varh"                "Little Kev | The Professionals"
-        "CSGO_Customplayer_tm_professional_vari"                "Number K | The Professionals"
-        "CSGO_Customplayer_tm_professional_varj"                "Getaway Sally | The Professionals"
+ 4619: 'Blueberries' Buckshot | NSWC SEAL (customplayer_ctm_st6_variantj)
+       models/player/custom_player/legacy/ctm_st6_variantj.mdl
+ 4680: 'Two Times' McCoy | TACP Cavalry (customplayer_ctm_st6_variantl)
+       models/player/custom_player/legacy/ctm_st6_variantl.mdl
+ 4711: Cmdr. Mae 'Dead Cold' Jamison | SWAT (customplayer_ctm_swat_variante)
+       models/player/custom_player/legacy/ctm_swat_variante.mdl
+ 4712: 1st Lieutenant Farlow | SWAT (customplayer_ctm_swat_variantf)
+       models/player/custom_player/legacy/ctm_swat_variantf.mdl
+ 4713: John 'Van Healen' Kask | SWAT (customplayer_ctm_swat_variantg)
+       models/player/custom_player/legacy/ctm_swat_variantg.mdl
+ 4714: Bio-Haz Specialist | SWAT (customplayer_ctm_swat_varianth)
+       models/player/custom_player/legacy/ctm_swat_varianth.mdl
+ 4715: Sergeant Bombson | SWAT (customplayer_ctm_swat_varianti)
+       models/player/custom_player/legacy/ctm_swat_varianti.mdl
+ 4716: Chem-Haz Specialist | SWAT (customplayer_ctm_swat_variantj)
+       models/player/custom_player/legacy/ctm_swat_variantj.mdl
+ 4718: Rezan the Redshirt | Sabre (customplayer_tm_balkan_variantk)
+       models/player/custom_player/legacy/tm_balkan_variantk.mdl
+ 4726: Sir Bloody Miami Darryl | The Professionals (customplayer_tm_professional_varf)
+       models/player/custom_player/legacy/tm_professional_varf.mdl
+ 4727: Safecracker Voltzmann | The Professionals (customplayer_tm_professional_varg)
+       models/player/custom_player/legacy/tm_professional_varg.mdl
+ 4728: Little Kev | The Professionals (customplayer_tm_professional_varh)
+       models/player/custom_player/legacy/tm_professional_varh.mdl
+ 4730: Getaway Sally | The Professionals (customplayer_tm_professional_varj)
+       models/player/custom_player/legacy/tm_professional_varj.mdl
+ 4732: Number K | The Professionals (customplayer_tm_professional_vari)
+       models/player/custom_player/legacy/tm_professional_vari.mdl
+ 4733: Sir Bloody Silent Darryl | The Professionals (customplayer_tm_professional_varf1)
+       models/player/custom_player/legacy/tm_professional_varf1.mdl
+ 4734: Sir Bloody Skullhead Darryl | The Professionals (customplayer_tm_professional_varf2)
+       models/player/custom_player/legacy/tm_professional_varf2.mdl
+ 4735: Sir Bloody Darryl Royale | The Professionals (customplayer_tm_professional_varf3)
+       models/player/custom_player/legacy/tm_professional_varf3.mdl
+ 4736: Sir Bloody Loudmouth Darryl | The Professionals (customplayer_tm_professional_varf4)
+       models/player/custom_player/legacy/tm_professional_varf4.mdl
+ 5036: Local T Agent (customplayer_t_map_based)
+       models/player/custom_player/legacy/tm_phoenix.mdl
+ 5037: Local CT Agent (customplayer_ct_map_based)
+       models/player/custom_player/legacy/ctm_sas.mdl
+ 5038: CSGO_CustomPlayer_tm_anarchist (customplayer_tm_anarchist)
+       models/player/custom_player/legacy/tm_anarchist.mdl
+ 5039: CSGO_CustomPlayer_tm_anarchist_varianta (customplayer_tm_anarchist_varianta)
+       models/player/custom_player/legacy/tm_anarchist_varianta.mdl
+ 5040: CSGO_CustomPlayer_tm_anarchist_variantb (customplayer_tm_anarchist_variantb)
+       models/player/custom_player/legacy/tm_anarchist_variantb.mdl
+ 5041: CSGO_CustomPlayer_tm_anarchist_variantc (customplayer_tm_anarchist_variantc)
+       models/player/custom_player/legacy/tm_anarchist_variantc.mdl
+ 5042: CSGO_CustomPlayer_tm_anarchist_variantd (customplayer_tm_anarchist_variantd)
+       models/player/custom_player/legacy/tm_anarchist_variantd.mdl
+ 5043: CSGO_CustomPlayer_tm_pirate (customplayer_tm_pirate)
+       models/player/custom_player/legacy/tm_pirate.mdl
+ 5044: CSGO_CustomPlayer_tm_pirate_varianta (customplayer_tm_pirate_varianta)
+       models/player/custom_player/legacy/tm_pirate_varianta.mdl
+ 5045: CSGO_CustomPlayer_tm_pirate_variantb (customplayer_tm_pirate_variantb)
+       models/player/custom_player/legacy/tm_pirate_variantb.mdl
+ 5046: CSGO_CustomPlayer_tm_pirate_variantc (customplayer_tm_pirate_variantc)
+       models/player/custom_player/legacy/tm_pirate_variantc.mdl
+ 5047: CSGO_CustomPlayer_tm_pirate_variantd (customplayer_tm_pirate_variantd)
+       models/player/custom_player/legacy/tm_pirate_variantd.mdl
+ 5048: CSGO_CustomPlayer_tm_professional (customplayer_tm_professional)
+       models/player/custom_player/legacy/tm_professional.mdl
+ 5049: CSGO_CustomPlayer_tm_professional_var1 (customplayer_tm_professional_var1)
+       models/player/custom_player/legacy/tm_professional_var1.mdl
+ 5050: CSGO_CustomPlayer_tm_professional_var2 (customplayer_tm_professional_var2)
+       models/player/custom_player/legacy/tm_professional_var2.mdl
+ 5051: CSGO_CustomPlayer_tm_professional_var3 (customplayer_tm_professional_var3)
+       models/player/custom_player/legacy/tm_professional_var3.mdl
+ 5052: CSGO_CustomPlayer_tm_professional_var4 (customplayer_tm_professional_var4)
+       models/player/custom_player/legacy/tm_professional_var4.mdl
+ 5053: CSGO_CustomPlayer_tm_separatist (customplayer_tm_separatist)
+       models/player/custom_player/legacy/tm_separatist.mdl
+ 5054: CSGO_CustomPlayer_tm_separatist_varianta (customplayer_tm_separatist_varianta)
+       models/player/custom_player/legacy/tm_separatist_varianta.mdl
+ 5055: CSGO_CustomPlayer_tm_separatist_variantb (customplayer_tm_separatist_variantb)
+       models/player/custom_player/legacy/tm_separatist_variantb.mdl
+ 5056: CSGO_CustomPlayer_tm_separatist_variantc (customplayer_tm_separatist_variantc)
+       models/player/custom_player/legacy/tm_separatist_variantc.mdl
+ 5057: CSGO_CustomPlayer_tm_separatist_variantd (customplayer_tm_separatist_variantd)
+       models/player/custom_player/legacy/tm_separatist_variantd.mdl
+ 5058: CSGO_CustomPlayer_ctm_gign (customplayer_ctm_gign)
+       models/player/custom_player/legacy/ctm_gign.mdl
+ 5059: CSGO_CustomPlayer_ctm_gign_varianta (customplayer_ctm_gign_varianta)
+       models/player/custom_player/legacy/ctm_gign_varianta.mdl
+ 5060: CSGO_CustomPlayer_ctm_gign_variantb (customplayer_ctm_gign_variantb)
+       models/player/custom_player/legacy/ctm_gign_variantb.mdl
+ 5061: CSGO_CustomPlayer_ctm_gign_variantc (customplayer_ctm_gign_variantc)
+       models/player/custom_player/legacy/ctm_gign_variantc.mdl
+ 5062: CSGO_CustomPlayer_ctm_gign_variantd (customplayer_ctm_gign_variantd)
+       models/player/custom_player/legacy/ctm_gign_variantd.mdl
+ 5063: CSGO_CustomPlayer_ctm_gsg9 (customplayer_ctm_gsg9)
+       models/player/custom_player/legacy/ctm_gsg9.mdl
+ 5064: CSGO_CustomPlayer_ctm_gsg9_varianta (customplayer_ctm_gsg9_varianta)
+       models/player/custom_player/legacy/ctm_gsg9_varianta.mdl
+ 5065: CSGO_CustomPlayer_ctm_gsg9_variantb (customplayer_ctm_gsg9_variantb)
+       models/player/custom_player/legacy/ctm_gsg9_variantb.mdl
+ 5066: CSGO_CustomPlayer_ctm_gsg9_variantc (customplayer_ctm_gsg9_variantc)
+       models/player/custom_player/legacy/ctm_gsg9_variantc.mdl
+ 5067: CSGO_CustomPlayer_ctm_gsg9_variantd (customplayer_ctm_gsg9_variantd)
+       models/player/custom_player/legacy/ctm_gsg9_variantd.mdl
+ 5068: CSGO_CustomPlayer_ctm_idf (customplayer_ctm_idf)
+       models/player/custom_player/legacy/ctm_idf.mdl
+ 5069: CSGO_CustomPlayer_ctm_idf_variantb (customplayer_ctm_idf_variantb)
+       models/player/custom_player/legacy/ctm_idf_variantb.mdl
+ 5070: CSGO_CustomPlayer_ctm_idf_variantc (customplayer_ctm_idf_variantc)
+       models/player/custom_player/legacy/ctm_idf_variantc.mdl
+ 5071: CSGO_CustomPlayer_ctm_idf_variantd (customplayer_ctm_idf_variantd)
+       models/player/custom_player/legacy/ctm_idf_variantd.mdl
+ 5072: CSGO_CustomPlayer_ctm_idf_variante (customplayer_ctm_idf_variante)
+       models/player/custom_player/legacy/ctm_idf_variante.mdl
+ 5073: CSGO_CustomPlayer_ctm_idf_variantf (customplayer_ctm_idf_variantf)
+       models/player/custom_player/legacy/ctm_idf_variantf.mdl
+ 5074: CSGO_CustomPlayer_ctm_swat (customplayer_ctm_swat)
+       models/player/custom_player/legacy/ctm_swat.mdl
+ 5075: CSGO_CustomPlayer_ctm_swat_varianta (customplayer_ctm_swat_varianta)
+       models/player/custom_player/legacy/ctm_swat_varianta.mdl
+ 5076: CSGO_CustomPlayer_ctm_swat_variantb (customplayer_ctm_swat_variantb)
+       models/player/custom_player/legacy/ctm_swat_variantb.mdl
+ 5077: CSGO_CustomPlayer_ctm_swat_variantc (customplayer_ctm_swat_variantc)
+       models/player/custom_player/legacy/ctm_swat_variantc.mdl
+ 5078: CSGO_CustomPlayer_ctm_swat_variantd (customplayer_ctm_swat_variantd)
+       models/player/custom_player/legacy/ctm_swat_variantd.mdl
+ 5079: CSGO_CustomPlayer_ctm_sas_varianta (customplayer_ctm_sas_varianta)
+       models/player/custom_player/legacy/ctm_sas_varianta.mdl
+ 5080: CSGO_CustomPlayer_ctm_sas_variantb (customplayer_ctm_sas_variantb)
+       models/player/custom_player/legacy/ctm_sas_variantb.mdl
+ 5081: CSGO_CustomPlayer_ctm_sas_variantc (customplayer_ctm_sas_variantc)
+       models/player/custom_player/legacy/ctm_sas_variantc.mdl
+ 5082: CSGO_CustomPlayer_ctm_sas_variantd (customplayer_ctm_sas_variantd)
+       models/player/custom_player/legacy/ctm_sas_variantd.mdl
+ 5083: CSGO_CustomPlayer_ctm_st6 (customplayer_ctm_st6)
+       models/player/custom_player/legacy/ctm_st6.mdl
+ 5084: CSGO_CustomPlayer_ctm_st6_varianta (customplayer_ctm_st6_varianta)
+       models/player/custom_player/legacy/ctm_st6_varianta.mdl
+ 5085: CSGO_CustomPlayer_ctm_st6_variantb (customplayer_ctm_st6_variantb)
+       models/player/custom_player/legacy/ctm_st6_variantb.mdl
+ 5086: CSGO_CustomPlayer_ctm_st6_variantc (customplayer_ctm_st6_variantc)
+       models/player/custom_player/legacy/ctm_st6_variantc.mdl
+ 5087: CSGO_CustomPlayer_ctm_st6_variantd (customplayer_ctm_st6_variantd)
+       models/player/custom_player/legacy/ctm_st6_variantd.mdl
+ 5088: CSGO_CustomPlayer_tm_balkan_variante (customplayer_tm_balkan_variante)
+       models/player/custom_player/legacy/tm_balkan_variante.mdl
+ 5089: CSGO_CustomPlayer_tm_balkan_varianta (customplayer_tm_balkan_varianta)
+       models/player/custom_player/legacy/tm_balkan_varianta.mdl
+ 5090: CSGO_CustomPlayer_tm_balkan_variantb (customplayer_tm_balkan_variantb)
+       models/player/custom_player/legacy/tm_balkan_variantb.mdl
+ 5091: CSGO_CustomPlayer_tm_balkan_variantc (customplayer_tm_balkan_variantc)
+       models/player/custom_player/legacy/tm_balkan_variantc.mdl
+ 5092: CSGO_CustomPlayer_tm_balkan_variantd (customplayer_tm_balkan_variantd)
+       models/player/custom_player/legacy/tm_balkan_variantd.mdl
+ 5093: CSGO_CustomPlayer_tm_jumpsuit_varianta (customplayer_tm_jumpsuit_varianta)
+       models/player/custom_player/legacy/tm_jumpsuit_varianta.mdl
+ 5094: CSGO_CustomPlayer_tm_jumpsuit_variantb (customplayer_tm_jumpsuit_variantb)
+       models/player/custom_player/legacy/tm_jumpsuit_variantb.mdl
+ 5095: CSGO_CustomPlayer_tm_jumpsuit_variantc (customplayer_tm_jumpsuit_variantc)
+       models/player/custom_player/legacy/tm_jumpsuit_variantc.mdl
+ 5096: CSGO_CustomPlayer_tm_phoenix_heavy (customplayer_tm_phoenix_heavy)
+       models/player/custom_player/legacy/tm_phoenix_heavy.mdl
+ 5097: CSGO_CustomPlayer_ctm_heavy (customplayer_ctm_heavy)
+       models/player/custom_player/legacy/ctm_heavy.mdl
+ 5100: CSGO_CustomPlayer_tm_leet_varianta (customplayer_tm_leet_varianta)
+       models/player/custom_player/legacy/tm_leet_varianta.mdl
+ 5101: CSGO_CustomPlayer_tm_leet_variantb (customplayer_tm_leet_variantb)
+       models/player/custom_player/legacy/tm_leet_variantb.mdl
+ 5102: CSGO_CustomPlayer_tm_leet_variantc (customplayer_tm_leet_variantc)
+       models/player/custom_player/legacy/tm_leet_variantc.mdl
+ 5103: CSGO_CustomPlayer_tm_leet_variantd (customplayer_tm_leet_variantd)
+       models/player/custom_player/legacy/tm_leet_variantd.mdl
+ 5104: CSGO_CustomPlayer_tm_leet_variante (customplayer_tm_leet_variante)
+       models/player/custom_player/legacy/tm_leet_variante.mdl
+ 5105: Ground Rebel  | Elite Crew (customplayer_tm_leet_variantg)
+       models/player/custom_player/legacy/tm_leet_variantg.mdl
+ 5106: Osiris | Elite Crew (customplayer_tm_leet_varianth)
+       models/player/custom_player/legacy/tm_leet_varianth.mdl
+ 5107: Prof. Shahmat | Elite Crew (customplayer_tm_leet_varianti)
+       models/player/custom_player/legacy/tm_leet_varianti.mdl
+ 5108: The Elite Mr. Muhlik | Elite Crew (customplayer_tm_leet_variantf)
+       models/player/custom_player/legacy/tm_leet_variantf.mdl
+ 5200: CSGO_CustomPlayer_tm_phoenix (customplayer_tm_phoenix)
+       models/player/custom_player/legacy/tm_phoenix.mdl
+ 5201: CSGO_CustomPlayer_tm_phoenix_varianta (customplayer_tm_phoenix_varianta)
+       models/player/custom_player/legacy/tm_phoenix_varianta.mdl
+ 5202: CSGO_CustomPlayer_tm_phoenix_variantb (customplayer_tm_phoenix_variantb)
+       models/player/custom_player/legacy/tm_phoenix_variantb.mdl
+ 5203: CSGO_CustomPlayer_tm_phoenix_variantc (customplayer_tm_phoenix_variantc)
+       models/player/custom_player/legacy/tm_phoenix_variantc.mdl
+ 5204: CSGO_CustomPlayer_tm_phoenix_variantd (customplayer_tm_phoenix_variantd)
+       models/player/custom_player/legacy/tm_phoenix_variantd.mdl
+ 5205: Soldier | Phoenix (customplayer_tm_phoenix_varianth)
+       models/player/custom_player/legacy/tm_phoenix_varianth.mdl
+ 5206: Enforcer | Phoenix (customplayer_tm_phoenix_variantf)
+       models/player/custom_player/legacy/tm_phoenix_variantf.mdl
+ 5207: Slingshot | Phoenix (customplayer_tm_phoenix_variantg)
+       models/player/custom_player/legacy/tm_phoenix_variantg.mdl
+ 5208: Street Soldier | Phoenix (customplayer_tm_phoenix_varianti)
+       models/player/custom_player/legacy/tm_phoenix_varianti.mdl
+ 5300: CSGO_CustomPlayer_ctm_fbi (customplayer_ctm_fbi)
+       models/player/custom_player/legacy/ctm_fbi.mdl
+ 5301: CSGO_CustomPlayer_ctm_fbi_varianta (customplayer_ctm_fbi_varianta)
+       models/player/custom_player/legacy/ctm_fbi_varianta.mdl
+ 5302: CSGO_CustomPlayer_ctm_fbi_variantc (customplayer_ctm_fbi_variantc)
+       models/player/custom_player/legacy/ctm_fbi_variantc.mdl
+ 5303: CSGO_CustomPlayer_ctm_fbi_variantd (customplayer_ctm_fbi_variantd)
+       models/player/custom_player/legacy/ctm_fbi_variantd.mdl
+ 5304: CSGO_CustomPlayer_ctm_fbi_variante (customplayer_ctm_fbi_variante)
+       models/player/custom_player/legacy/ctm_fbi_variante.mdl
+ 5305: Operator | FBI SWAT (customplayer_ctm_fbi_variantf)
+       models/player/custom_player/legacy/ctm_fbi_variantf.mdl
+ 5306: Markus Delrow | FBI HRT (customplayer_ctm_fbi_variantg)
+       models/player/custom_player/legacy/ctm_fbi_variantg.mdl
+ 5307: Michael Syfers  | FBI Sniper (customplayer_ctm_fbi_varianth)
+       models/player/custom_player/legacy/ctm_fbi_varianth.mdl
+ 5308: Special Agent Ava | FBI (customplayer_ctm_fbi_variantb)
+       models/player/custom_player/legacy/ctm_fbi_variantb.mdl
+ 5400: 3rd Commando Company | KSK (customplayer_ctm_st6_variantk)
+       models/player/custom_player/legacy/ctm_st6_variantk.mdl
+ 5401: Seal Team 6 Soldier | NSWC SEAL (customplayer_ctm_st6_variante)
+       models/player/custom_player/legacy/ctm_st6_variante.mdl
+ 5402: Buckshot | NSWC SEAL (customplayer_ctm_st6_variantg)
+       models/player/custom_player/legacy/ctm_st6_variantg.mdl
+ 5403: 'Two Times' McCoy | USAF TACP (customplayer_ctm_st6_variantm)
+       models/player/custom_player/legacy/ctm_st6_variantm.mdl
+ 5404: Lt. Commander Ricksaw | NSWC SEAL (customplayer_ctm_st6_varianti)
+       models/player/custom_player/legacy/ctm_st6_varianti.mdl
+ 5500: Dragomir | Sabre (customplayer_tm_balkan_variantf)
+       models/player/custom_player/legacy/tm_balkan_variantf.mdl
+ 5501: Maximus | Sabre (customplayer_tm_balkan_varianti)
+       models/player/custom_player/legacy/tm_balkan_varianti.mdl
+ 5502: Rezan The Ready | Sabre (customplayer_tm_balkan_variantg)
+       models/player/custom_player/legacy/tm_balkan_variantg.mdl
+ 5503: Blackwolf | Sabre (customplayer_tm_balkan_variantj)
+       models/player/custom_player/legacy/tm_balkan_variantj.mdl
+ 5504: 'The Doctor' Romanov | Sabre (customplayer_tm_balkan_varianth)
+       models/player/custom_player/legacy/tm_balkan_varianth.mdl
+ 5505: Dragomir | Sabre Footsoldier (customplayer_tm_balkan_variantl)
+       models/player/custom_player/legacy/tm_balkan_variantl.mdl
+ 5600: CSGO_CustomPlayer_ctm_sas (customplayer_ctm_sas)
+       models/player/custom_player/legacy/ctm_sas.mdl
+ 5601: B Squadron Officer | SAS (customplayer_ctm_sas_variantf)
+       models/player/custom_player/legacy/ctm_sas_variantf.mdl

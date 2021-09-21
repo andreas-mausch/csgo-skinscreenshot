@@ -206,7 +206,6 @@ python csgo-skinscreenshot.py
 # Todo
 
 - Nametags
-- List of Paint Kits aka Finish Catalog
 - List of Sticker IDs
 
 # List player models
