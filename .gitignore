@@ -5,3 +5,6 @@ development screenshots/
 
 sourcemod-plugin/compiled
 server/sm_changeskin.smx
+
+lists/data/
+lists/node_modules/

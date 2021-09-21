@@ -1,0 +1,18 @@
+{
+  "name": "lists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "download": "npm run download:itemsGame && npm run download:translations && npm run download:schema",
+    "download:itemsGame": "wget --directory-prefix ./data/ https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/scripts/items/items_game.txt",
+    "download:translations": "wget --directory-prefix ./data/ https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/resource/csgo_english.txt",
+    "download:schema": "https://api.steampowered.com/IEconItems_730/GetSchema/v2/?key=<key>",
+    "paintKits": "node ./paintKits.js"
+  },
+  "dependencies": {
+    "@node-steam/vdf": "2.2.0"
+  }
+}
