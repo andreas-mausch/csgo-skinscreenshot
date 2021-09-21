@@ -11,7 +11,8 @@
     "download:translations": "wget --directory-prefix ./data/ https://raw.githubusercontent.com/SteamDatabase/GameTracking-CSGO/master/csgo/resource/csgo_english.txt",
     "download:schema": "https://api.steampowered.com/IEconItems_730/GetSchema/v2/?key=<key>",
     "paintKits": "node ./paintKits.js",
-    "playerModels": "node ./playerModels.js"
+    "playerModels": "node ./playerModels.js",
+    "stickers": "node ./stickers.js"
   },
   "dependencies": {
     "@node-steam/vdf": "2.2.0"
