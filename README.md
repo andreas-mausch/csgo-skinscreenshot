@@ -22,6 +22,8 @@ sm_teleport -1548 -339 195 0 104 0
 
 ## sm_changeskin
 
+Check [paint_kits.txt](paint_kits.txt) for all available indices.
+
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
 sm_changeskin weapon_usp_silencer 415 0.0 -1 0 0
@@ -108,7 +110,7 @@ sm_gloves 5031 10041 0.0
 sm_gloves 5031 10043 0.0
 ```
 
-See a list for the *Item Definition Index* below (Economy_Weapon_IDs).
+Check [paint_kits.txt](paint_kits.txt) for all available indices.
 
 ## sm_sticker
 
@@ -119,6 +121,8 @@ sm_sticker 0 60 0.0 1.0 0.0
 # Titan Holo
 sm_sticker 1 76 0.0 1.0 0.0
 ```
+
+Check [stickers.txt](stickers.txt) for all available indices.
 
 ## sm_player_model
 
