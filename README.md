@@ -23,7 +23,7 @@ sm_teleport -1548 -339 195 0 104 0
 ## sm_changeskin
 
 Check [weapons.txt](weapons.txt) for all available weapon names.  
-Check [paint_kits.txt](paint_kits.txt) for all available indices.
+Check [paint_kits.txt](paint_kits.txt) for all available paint kits.
 
 ```
 # Arguments are: sm_changeskin weapon paint wear stattrak quality seed
@@ -111,7 +111,8 @@ sm_gloves 5031 10041 0.0
 sm_gloves 5031 10043 0.0
 ```
 
-Check [paint_kits.txt](paint_kits.txt) for all available indices.
+Check [gloves.txt](gloves.txt) for all available indices.  
+Check [paint_kits.txt](paint_kits.txt) for all available paint kits.
 
 ## sm_sticker
 

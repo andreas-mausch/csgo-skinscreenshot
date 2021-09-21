@@ -12,7 +12,8 @@
     "download:schema": "https://api.steampowered.com/IEconItems_730/GetSchema/v2/?key=<key>",
     "paintKits": "node ./paintKits.js",
     "playerModels": "node ./playerModels.js",
-    "stickers": "node ./stickers.js"
+    "stickers": "node ./stickers.js",
+    "gloves": "node ./gloves.js"
   },
   "dependencies": {
     "@node-steam/vdf": "2.2.0"
