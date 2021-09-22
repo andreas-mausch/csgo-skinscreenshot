@@ -1,3 +1,5 @@
+ 4613: Bloody Darryl The Strapped | The Professionals (customplayer_tm_professional_varf5)
+       models/player/custom_player/legacy/tm_professional_varf5.mdl
  4619: 'Blueberries' Buckshot | NSWC SEAL (customplayer_ctm_st6_variantj)
        models/player/custom_player/legacy/ctm_st6_variantj.mdl
  4680: 'Two Times' McCoy | TACP Cavalry (customplayer_ctm_st6_variantl)
@@ -34,6 +36,40 @@
        models/player/custom_player/legacy/tm_professional_varf3.mdl
  4736: Sir Bloody Loudmouth Darryl | The Professionals (customplayer_tm_professional_varf4)
        models/player/custom_player/legacy/tm_professional_varf4.mdl
+ 4749: Sous-Lieutenant Medic | Gendarmerie Nationale (customplayer_ctm_gendarmerie_varianta)
+       models/player/custom_player/legacy/ctm_gendarmerie_varianta.mdl
+ 4750: Chem-Haz Capitaine | Gendarmerie Nationale (customplayer_ctm_gendarmerie_variantb)
+       models/player/custom_player/legacy/ctm_gendarmerie_variantb.mdl
+ 4751: Chef d'Escadron Rouchard | Gendarmerie Nationale (customplayer_ctm_gendarmerie_variantc)
+       models/player/custom_player/legacy/ctm_gendarmerie_variantc.mdl
+ 4752: Aspirant | Gendarmerie Nationale (customplayer_ctm_gendarmerie_variantd)
+       models/player/custom_player/legacy/ctm_gendarmerie_variantd.mdl
+ 4753: Officer Jacques Beltram | Gendarmerie Nationale (customplayer_ctm_gendarmerie_variante)
+       models/player/custom_player/legacy/ctm_gendarmerie_variante.mdl
+ 4756: Lieutenant 'Tree Hugger' Farlow | SWAT (customplayer_ctm_swat_variantk)
+       models/player/custom_player/legacy/ctm_swat_variantk.mdl
+ 4757: Cmdr. Davida 'Goggles' Fernandez | SEAL Frogman (customplayer_ctm_diver_varianta)
+       models/player/custom_player/legacy/ctm_diver_varianta.mdl
+ 4771: Cmdr. Frank 'Wet Sox' Baroud | SEAL Frogman (customplayer_ctm_diver_variantb)
+       models/player/custom_player/legacy/ctm_diver_variantb.mdl
+ 4772: Lieutenant Rex Krikey | SEAL Frogman (customplayer_ctm_diver_variantc)
+       models/player/custom_player/legacy/ctm_diver_variantc.mdl
+ 4773: Elite Trapper Solman | Guerrilla Warfare (customplayer_tm_jungle_raider_varianta)
+       models/player/custom_player/legacy/tm_jungle_raider_varianta.mdl
+ 4774: Crasswater The Forgotten | Guerrilla Warfare (customplayer_tm_jungle_raider_variantb)
+       models/player/custom_player/legacy/tm_jungle_raider_variantb.mdl
+ 4775: Arno The Overgrown | Guerrilla Warfare (customplayer_tm_jungle_raider_variantc)
+       models/player/custom_player/legacy/tm_jungle_raider_variantc.mdl
+ 4776: Col. Mangos Dabisi | Guerrilla Warfare (customplayer_tm_jungle_raider_variantd)
+       models/player/custom_player/legacy/tm_jungle_raider_variantd.mdl
+ 4777: Vypa Sista of the Revolution | Guerrilla Warfare (customplayer_tm_jungle_raider_variante)
+       models/player/custom_player/legacy/tm_jungle_raider_variante.mdl
+ 4778: Trapper Aggressor | Guerrilla Warfare (customplayer_tm_jungle_raider_variantf)
+       models/player/custom_player/legacy/tm_jungle_raider_variantf.mdl
+ 4780: 'Medium Rare' Crasswater | Guerrilla Warfare (customplayer_tm_jungle_raider_variantb2)
+       models/player/custom_player/legacy/tm_jungle_raider_variantb2.mdl
+ 4781: Trapper | Guerrilla Warfare (customplayer_tm_jungle_raider_variantf2)
+       models/player/custom_player/legacy/tm_jungle_raider_variantf2.mdl
  5036: Local T Agent (customplayer_t_map_based)
        models/player/custom_player/legacy/tm_phoenix.mdl
  5037: Local CT Agent (customplayer_ct_map_based)
@@ -176,6 +212,8 @@
        models/player/custom_player/legacy/tm_leet_varianti.mdl
  5108: The Elite Mr. Muhlik | Elite Crew (customplayer_tm_leet_variantf)
        models/player/custom_player/legacy/tm_leet_variantf.mdl
+ 5109: Mr. Muhlik | Elite Crew (customplayer_tm_leet_variantj)
+       models/player/custom_player/legacy/tm_leet_variantj.mdl
  5200: CSGO_CustomPlayer_tm_phoenix (customplayer_tm_phoenix)
        models/player/custom_player/legacy/tm_phoenix.mdl
  5201: CSGO_CustomPlayer_tm_phoenix_varianta (customplayer_tm_phoenix_varianta)
@@ -222,6 +260,8 @@
        models/player/custom_player/legacy/ctm_st6_variantm.mdl
  5404: Lt. Commander Ricksaw | NSWC SEAL (customplayer_ctm_st6_varianti)
        models/player/custom_player/legacy/ctm_st6_varianti.mdl
+ 5405: Primeiro Tenente | Brazilian 1st Battalion (customplayer_ctm_st6_variantn)
+       models/player/custom_player/legacy/ctm_st6_variantn.mdl
  5500: Dragomir | Sabre (customplayer_tm_balkan_variantf)
        models/player/custom_player/legacy/tm_balkan_variantf.mdl
  5501: Maximus | Sabre (customplayer_tm_balkan_varianti)
@@ -238,3 +278,5 @@
        models/player/custom_player/legacy/ctm_sas.mdl
  5601: B Squadron Officer | SAS (customplayer_ctm_sas_variantf)
        models/player/custom_player/legacy/ctm_sas_variantf.mdl
+ 5602: D Squadron Officer | NZSAS (customplayer_ctm_sas_variantg)
+       models/player/custom_player/legacy/ctm_sas_variantg.mdl
