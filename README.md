@@ -211,7 +211,8 @@ python csgo-skinscreenshot.py
 
 # Todo
 
-- Nametags
+- Weapon Nametags
+- Player Model Patches
 
 # List paint kits, player models and stickers
 
