@@ -40,12 +40,13 @@ RUN wget --quiet https://ptah.zizt.ru/files/PTaH-V1.1.3-build20-linux.zip && \
     unzip PTaH-*-linux.zip -d ./csgo/csgo && \
     rm PTaH-*-linux.zip
 
+# Sourcemod settings
+RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
+RUN sed -i 's/"DisableAutoUpdate"\t"no"/"DisableAutoUpdate"\t"yes"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
+
 # CS:GO Server config
 COPY server.cfg /home/steam/csgo/csgo/cfg/server.cfg
 COPY gamemode_competitive_server.cfg /home/steam/csgo/csgo/cfg/gamemode_competitive_server.cfg
-
-# Disable FollowCSGOServerGuidelines
-RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
 
 # Sourcemod plugins
 COPY sourcemod-plugin/*.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
