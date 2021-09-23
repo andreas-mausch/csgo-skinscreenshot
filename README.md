@@ -57,8 +57,14 @@ sm_changeskin weapon_knife_flip 413 0.0 -1 3 412
 sm_changeskin weapon_knife_tactical 44 0.0 -1 3 703
 # Huntsman | Case Hardened Dick Pattern
 sm_changeskin weapon_knife_tactical 44 0.0 -1 3 190
+# Huntsman | Emerald Gamma Doppler
+sm_changeskin weapon_knife_tactical 568 0.0 -1 3 0
 # Karambit | Case Hardened Blue Gem (also: seed 269, 387)
 sm_changeskin weapon_knife_karambit 44 0.0 -1 3 888
+# Butterfly | Lore
+sm_changeskin weapon_knife_butterfly 1105 0.0 -1 3 888
+# Butterfly | Emerald Gamma Doppler
+sm_changeskin weapon_knife_butterfly 568 0.0 -1 3 0
 ```
 
 ### Stattrak values
