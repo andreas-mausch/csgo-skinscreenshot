@@ -8,6 +8,7 @@
 #include "gloves.sp"
 #include "player_model.sp"
 #include "teleport.sp"
+#include "find.sp"
 
 #undef REQUIRE_PLUGIN
 #define MAX_PAINTS 800
@@ -25,4 +26,5 @@ public OnPluginStart() {
   RegConsoleCmd("sm_gloves", ChangeGloves);
   RegConsoleCmd("sm_player_model", ChangePlayerModel);
   RegConsoleCmd("sm_teleport", Teleport);
+  RegConsoleCmd("sm_find", Find);
 }
