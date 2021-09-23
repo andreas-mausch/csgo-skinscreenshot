@@ -30,7 +30,7 @@ RUN pip install vpk==1.3.3
 RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145-linux.tar.gz && \
     tar xf mmsource-*-linux.tar.gz -C ./csgo/csgo && \
     rm mmsource-*-linux.tar.gz && \
-    wget --quiet https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6510-linux.tar.gz && \
+    wget --quiet https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6514-linux.tar.gz && \
     tar xf sourcemod-*-linux.tar.gz -C ./csgo/csgo && \
     rm sourcemod-*-linux.tar.gz
 
@@ -41,8 +41,8 @@ RUN wget --quiet https://ptah.zizt.ru/files/PTaH-V1.1.3-build20-linux.zip && \
     rm PTaH-*-linux.zip
 
 # Sourcemod settings
-RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
-RUN sed -i 's/"DisableAutoUpdate"\t"no"/"DisableAutoUpdate"\t"yes"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
+RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg && \
+    sed -i 's/"DisableAutoUpdate"\t\t\t"no"/"DisableAutoUpdate"\t\t\t"yes"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
 
 # CS:GO Server config
 COPY server.cfg /home/steam/csgo/csgo/cfg/server.cfg
