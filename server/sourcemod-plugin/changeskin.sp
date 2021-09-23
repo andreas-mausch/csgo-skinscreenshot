@@ -4,10 +4,10 @@
 #include <sdkhooks>
 #include <clientprefs>
 
-#include "sm_skin.sp"
-#include "sm_gloves.sp"
-#include "sm_player_model.sp"
-#include "sm_teleport.sp"
+#include "skin.sp"
+#include "gloves.sp"
+#include "player_model.sp"
+#include "teleport.sp"
 
 #undef REQUIRE_PLUGIN
 #define MAX_PAINTS 800

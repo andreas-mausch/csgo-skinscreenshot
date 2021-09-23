@@ -26,10 +26,6 @@ RUN mkdir -p csgo && \
 ENV PATH="${PATH}:/home/steam/.local/bin"
 RUN pip install vpk==1.3.3
 
-# CS:GO Server config
-COPY server.cfg /home/steam/csgo/csgo/cfg/server.cfg
-COPY gamemode_competitive_server.cfg /home/steam/csgo/csgo/cfg/gamemode_competitive_server.cfg
-
 # Metamod and Sourcemod
 RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145-linux.tar.gz && \
     tar xf mmsource-*-linux.tar.gz -C ./csgo/csgo && \
@@ -44,14 +40,18 @@ RUN wget --quiet https://ptah.zizt.ru/files/PTaH-V1.1.3-build20-linux.zip && \
     unzip PTaH-*-linux.zip -d ./csgo/csgo && \
     rm PTaH-*-linux.zip
 
+# CS:GO Server config
+COPY server.cfg /home/steam/csgo/csgo/cfg/server.cfg
+COPY gamemode_competitive_server.cfg /home/steam/csgo/csgo/cfg/gamemode_competitive_server.cfg
+
 # Disable FollowCSGOServerGuidelines
 RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg
 
 # Sourcemod plugins
 COPY sourcemod-plugin/*.sp /home/steam/csgo/csgo/addons/sourcemod/scripting/
 
-RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_changeskin.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_changeskin.smx && \
-    /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sm_sticker.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sm_sticker.smx
+RUN /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/changeskin.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/changeskin.smx && \
+    /home/steam/csgo/csgo/addons/sourcemod/scripting/spcomp /home/steam/csgo/csgo/addons/sourcemod/scripting/sticker.sp -o /home/steam/csgo/csgo/addons/sourcemod/plugins/sticker.smx
 
 EXPOSE 27015
 ENTRYPOINT ["./csgo/srcds_run"]
