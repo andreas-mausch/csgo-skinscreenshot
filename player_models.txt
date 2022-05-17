@@ -212,7 +212,7 @@
        models/player/custom_player/legacy/tm_leet_varianti.mdl
  5108: The Elite Mr. Muhlik | Elite Crew (customplayer_tm_leet_variantf)
        models/player/custom_player/legacy/tm_leet_variantf.mdl
- 5109: Mr. Muhlik | Elite Crew (customplayer_tm_leet_variantj)
+ 5109: Jungle Rebel | Elite Crew (customplayer_tm_leet_variantj)
        models/player/custom_player/legacy/tm_leet_variantj.mdl
  5200: CSGO_CustomPlayer_tm_phoenix (customplayer_tm_phoenix)
        models/player/custom_player/legacy/tm_phoenix.mdl
