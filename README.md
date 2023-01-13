@@ -95,26 +95,26 @@ The field can have the following values:
 ## sm_gloves
 
 ```
-# Arguments are: sm_gloves index paint wear
+# Arguments are: sm_gloves index paint wear seed
 
 # Sport Gloves | Vice
-sm_gloves 5030 10048 0.0
+sm_gloves 5030 10048 0.0 0
 # Sport Gloves | Amphibious
-sm_gloves 5030 10045 0.0
+sm_gloves 5030 10045 0.0 0
 # Sport Gloves | Omega
-sm_gloves 5030 10047 0.0
+sm_gloves 5030 10047 0.0 0
 # Sport Gloves | Pandora's Box
-sm_gloves 5030 10037 0.0
+sm_gloves 5030 10037 0.0 0
 # Sport Gloves | Hedge Maze
-sm_gloves 5030 10038 0.0
+sm_gloves 5030 10038 0.0 0
 # Broken Fang Gloves | Jade
-sm_gloves 5035 10085 0.0
+sm_gloves 5035 10085 0.0 0
 # Hand Wraps | CAUTION!
-sm_gloves 5032 10084 0.0
+sm_gloves 5032 10084 0.0 0
 # Driver Gloves | King Snake
-sm_gloves 5031 10041 0.0
+sm_gloves 5031 10041 0.0 0
 # Driver Gloves | Overtake
-sm_gloves 5031 10043 0.0
+sm_gloves 5031 10043 0.0 0
 ```
 
 Check [gloves.txt](gloves.txt) for all available indices.  

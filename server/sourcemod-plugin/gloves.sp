@@ -1,19 +1,21 @@
 public Action:ChangeGloves(client, args) {
-  if (GetCmdArgs() != 3) {
-    ReplyToCommand(client, "Need 3 arguments (index, paint, wear)");
+  if (GetCmdArgs() != 4) {
+    ReplyToCommand(client, "Need 4 arguments (index, paint, wear, seed)");
     return Plugin_Handled;
   }
 
-  char indexString[64], paintString[64], wearString[64];
+  char indexString[64], paintString[64], wearString[64], seedString[32];
   GetCmdArg(1, indexString, sizeof(indexString));
   GetCmdArg(2, paintString, sizeof(paintString));
   GetCmdArg(3, wearString, sizeof(wearString));
+  GetCmdArg(4, seedString, sizeof(seedString));
 
   int index = StringToInt(indexString);
   int paint = StringToInt(paintString);
   float wear = StringToFloat(wearString);
+  int seed = StringToInt(seedString);
 
-  PrintToServer("ChangeGloves index=%d, paint=%d, wear=%f", index, paint, wear);
+  PrintToServer("ChangeGloves index=%d, paint=%d, wear=%f, seed=%d", index, paint, wear, seed);
 
   int activeWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
   if(activeWeapon != -1) {
@@ -34,6 +36,7 @@ public Action:ChangeGloves(client, args) {
   SetEntPropEnt(gloves, Prop_Data, "m_hOwnerEntity", client);
   SetEntPropEnt(gloves, Prop_Data, "m_hParent", client);
   SetEntProp(gloves, Prop_Send, "m_bInitialized", 1);
+  SetEntProp(gloves, Prop_Send, "m_nFallbackSeed", seed);
 
   DispatchSpawn(gloves);
   SetEntPropEnt(client, Prop_Send, "m_hMyWearables", gloves);
