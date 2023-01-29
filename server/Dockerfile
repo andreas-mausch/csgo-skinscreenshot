@@ -17,8 +17,8 @@ RUN mkdir -p steamcmd && \
 # CS:GO
 RUN mkdir -p csgo && \
     ./steamcmd/steamcmd.sh \
-        +login anonymous \
         +force_install_dir /home/steam/csgo \
+        +login anonymous \
         +app_update 740 validate \
         +quit
 
