@@ -27,10 +27,10 @@ ENV PATH="${PATH}:/home/steam/.local/bin"
 RUN pip install vpk==1.3.3
 
 # Metamod and Sourcemod
-RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1145-linux.tar.gz && \
+RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1148-linux.tar.gz && \
     tar xf mmsource-*-linux.tar.gz -C ./csgo/csgo && \
     rm mmsource-*-linux.tar.gz && \
-    wget --quiet https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6514-linux.tar.gz && \
+    wget --quiet https://sm.alliedmods.net/smdrop/1.11/sourcemod-1.11.0-git6927-linux.tar.gz && \
     tar xf sourcemod-*-linux.tar.gz -C ./csgo/csgo && \
     rm sourcemod-*-linux.tar.gz
 
