@@ -44,7 +44,7 @@ public Action:SetupItemSystem()
 {
   StartPrepSDKCall(SDKCall_Static);
   // ItemSystem
-  char signature[] = "\x55\x89\xE5\x83\xEC\x18\x89\x5D\xF8\x8B\x1D\x2A\x2A\x2A\x2A\x89\x7D\xFC";
+  char signature[] = "\x55\x89\xE5\x57\x56\x53\x83\xEC\x0C\x8B\x1D\x2A\x2A\x2A\x2A\x85\xDB\x74\x2A";
   PrepSDKCall_SetSignature(SDKLibrary_Server, signature, sizeof(signature) - 1);
   PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
 
@@ -70,7 +70,7 @@ public Action:SetupGetAttributeDefinitionByName()
 {
   StartPrepSDKCall(SDKCall_Raw);
   // CEconItemSchema::GetAttributeDefinitionByName
-  char signature[] = "\x55\x89\xE5\x57\x56\x53\x83\xEC\x3C\x8B\x0D\x2A\x2A\x2A\x2A\x8B\x75\x08\x85\xC9";
+  char signature[] = "\x55\x89\xE5\x57\x56\x53\x83\xEC\x1C\xA1\x2A\x2A\x2A\x2A\x8B\x75\x08\x89\x45\xE4\x85\xC0\x75\x2A";
   PrepSDKCall_SetSignature(SDKLibrary_Server, signature, sizeof(signature) - 1);
   PrepSDKCall_AddParameter(SDKType_String, SDKPass_Pointer);
   PrepSDKCall_SetReturnInfo(SDKType_PlainOldData, SDKPass_Plain);
@@ -86,7 +86,7 @@ public Action:SetupGenerateAttribute()
 {
   StartPrepSDKCall(SDKCall_Raw);
   // CEconItemSystem::GenerateAttribute
-  char signature[] = "\x55\x89\xE5\x83\xEC\x18\xC7\x04\x24\x18\x00\x00\x00\x89\x5D\xF8";
+  char signature[] = "\x55\x89\xE5\x56\x53\x8B\x5D\x0C\x83\xEC\x0C\x6A\x18";
   PrepSDKCall_SetSignature(SDKLibrary_Server, signature, sizeof(signature) - 1);
   PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
   PrepSDKCall_AddParameter(SDKType_Float, SDKPass_Plain);
@@ -103,7 +103,7 @@ public Action:SetupAddAttribute()
 {
   StartPrepSDKCall(SDKCall_Raw);
   // CAttributeList::AddAttribute
-  char signature[] = "\x55\x89\xE5\x83\xEC\x38\x89\x5D\xF4\x8B\x5D\x0C\x89\x75\xF8\x8B\x75\x08\x89\x7D\xFC\x89\x1C\x24";
+  char signature[] = "\x55\x89\xE5\x57\x56\x53\x83\xEC\x1C\x8B\x5D\x0C\x8B\x75\x08\x0F\xB7\x7B\x04";
   PrepSDKCall_SetSignature(SDKLibrary_Server, signature, sizeof(signature) - 1);
   PrepSDKCall_AddParameter(SDKType_PlainOldData, SDKPass_Plain);
 
