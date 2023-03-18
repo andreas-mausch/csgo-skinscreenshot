@@ -69,19 +69,19 @@ public Action:SetSticker(client, args)
   pAttributeList.SetOrAddAttributeValue(113 + iSlot * 4, iStickerIndex); // sticker slot %i id
 	
   if(fStickerWear != 0.0)
-	{
-		pAttributeList.SetOrAddAttributeValue(114 + iSlot * 4, fStickerWear); // sticker slot %i wear
-	}
+  {
+    pAttributeList.SetOrAddAttributeValue(114 + iSlot * 4, fStickerWear); // sticker slot %i wear
+  }
 
   if(fStickerScale != 0.0)
-	{
-		pAttributeList.SetOrAddAttributeValue(115 + iSlot * 4, fStickerScale); //sticker slot %i scale
-	}
+  {
+    pAttributeList.SetOrAddAttributeValue(115 + iSlot * 4, fStickerScale); //sticker slot %i scale
+  }
 	
   if(fStickerRotation != 0.0)
-	{
-		pAttributeList.SetOrAddAttributeValue(116 + iSlot * 4, fStickerRotation); //sticker slot %i rotation
-	}
+  {
+    pAttributeList.SetOrAddAttributeValue(116 + iSlot * 4, fStickerRotation); //sticker slot %i rotation
+  }
 
   PTaH_ForceFullUpdate(client);
 
