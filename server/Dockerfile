@@ -42,7 +42,7 @@ RUN wget --quiet https://github.com/komashchenko/PTaH/releases/download/v1.1.4/l
 
 # Patch for PTaH
 RUN wget --quiet https://raw.githubusercontent.com/komashchenko/PTaH/74ec3715c12d0757d20b937ebebe6a0f018c32d9/PTaH.games.txt && \
-    cp ./PTaH.games.txt ./serverfiles/csgo/addons/sourcemod/gamedata && \
+    cp ./PTaH.games.txt ./csgo/csgo/addons/sourcemod/gamedata && \
     rm ./PTaH.games.txt
     
 # Sourcemod settings
