@@ -159,7 +159,7 @@ The Sourcemod plugin will be copied and compiled as part of the `docker build`.
 To build the image, run this:
 
 ```bash
-docker build --progress=plain --tag csgo-server-with-changeskin ./server/
+docker buildx build --tag csgo-server-with-changeskin ./server/
 ```
 
 To start a CS:GO server:
@@ -172,6 +172,15 @@ Get a shell:
 
 ```bash
 docker run -it --rm --entrypoint bash csgo-server-with-changeskin
+```
+
+Debug Sourcemod (server/rcon commands):
+
+```
+plugin_print
+meta list
+sm exts list
+sm plugins list
 ```
 
 # CS:GO Client
@@ -188,6 +197,12 @@ Now, connect to the server (replace IP with your server IP):
 ```
 password 123456; connect 192.168.178.49
 ```
+
+If you have trouble to start the CS:GO Client on Linux (shows blackscreen and then exists after few seconds):
+
+> -nojoy -novid -fullscreen and renaming the videos folder to videos.bak fixed it for me. This causes a black screen behind the player model in the menu, but game play is fine for me. I'm running Manjaro KDE Plasma.
+> -- [https://github.com/ValveSoftware/csgo-osx-linux/issues/2643#issuecomment-999244250](https://github.com/ValveSoftware/csgo-osx-linux/issues/2643#issuecomment-999244250)
+
 
 # RabbitMQ
 
