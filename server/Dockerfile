@@ -30,15 +30,15 @@ RUN pip install vpk==1.3.3
 RUN wget --quiet https://mms.alliedmods.net/mmsdrop/1.11/mmsource-1.11.0-git1148-linux.tar.gz && \
     tar xf mmsource-*-linux.tar.gz -C ./csgo/csgo && \
     rm mmsource-*-linux.tar.gz && \
-    wget --quiet https://sm.alliedmods.net/smdrop/1.11/sourcemod-1.11.0-git6927-linux.tar.gz && \
+    wget --quiet https://sm.alliedmods.net/smdrop/1.11/sourcemod-1.11.0-git6934-linux.tar.gz && \
     tar xf sourcemod-*-linux.tar.gz -C ./csgo/csgo && \
     rm sourcemod-*-linux.tar.gz
 
 # PTaH Additional CS:GO Hooks and Natives
 # https://github.com/komashchenko/PTaH
-RUN wget --quiet https://ptah.zizt.ru/files/PTaH-V1.1.3-build20-linux.zip && \
-    unzip PTaH-*-linux.zip -d ./csgo/csgo && \
-    rm PTaH-*-linux.zip
+RUN wget --quiet https://github.com/komashchenko/PTaH/releases/download/v1.1.4/linux.zip && \
+    unzip linux.zip -d ./csgo/csgo && \
+    rm linux.zip
 
 # Sourcemod settings
 RUN sed -i 's/"FollowCSGOServerGuidelines"\t"yes"/"FollowCSGOServerGuidelines"\t"no"/' ./csgo/csgo/addons/sourcemod/configs/core.cfg && \
