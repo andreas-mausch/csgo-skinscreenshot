@@ -35,8 +35,8 @@ public Action:ChangeGloves(client, args) {
   SetEntPropFloat(gloves, Prop_Send, "m_flFallbackWear", wear);
   SetEntPropEnt(gloves, Prop_Data, "m_hOwnerEntity", client);
   SetEntPropEnt(gloves, Prop_Data, "m_hParent", client);
-  SetEntProp(gloves, Prop_Send, "m_bInitialized", 1);
   SetEntProp(gloves, Prop_Send, "m_nFallbackSeed", seed);
+  SetEntProp(gloves, Prop_Send, "m_bInitialized", 1);
 
   DispatchSpawn(gloves);
   SetEntPropEnt(client, Prop_Send, "m_hMyWearables", gloves);
