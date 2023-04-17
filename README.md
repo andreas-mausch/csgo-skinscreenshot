@@ -40,6 +40,8 @@ sm_changeskin weapon_awp 344 0.0 -1 0 0
 sm_changeskin weapon_awp 756 0.0 -1 0 0
 # AWP | Medusa
 sm_changeskin weapon_awp 446 0.0 -1 0 0
+# USP-S | Whiteout
+sm_changeskin weapon_usp_silencer 1065 0.0 -1 0 0
 ```
 
 Knives
@@ -128,6 +130,10 @@ Check [paint_kits.txt](paint_kits.txt) for all available paint kits.
 sm_sticker 0 60 0.0 1.0 0.0
 # Titan Holo
 sm_sticker 1 76 0.0 1.0 0.0
+# Liquid Fire (Holo)
+sm_sticker 2 4934 0.0 1.0 0.0
+# Cotton Candy Flow (Holo)
+sm_sticker 3 4863 0.0 1.0 0.0
 ```
 
 Check [stickers.txt](stickers.txt) for all available indices.
