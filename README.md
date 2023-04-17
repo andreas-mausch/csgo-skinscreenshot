@@ -195,7 +195,7 @@ In order to connect to the server, do this:
 Now, connect to the server (replace IP with your server IP):
 
 ```
-password 123456; connect 192.168.178.49
+password 123456; connect 172.17.0.1
 ```
 
 If you have trouble to start the CS:GO Client on Linux (shows blackscreen and then exists after few seconds):
@@ -203,6 +203,9 @@ If you have trouble to start the CS:GO Client on Linux (shows blackscreen and th
 > -nojoy -novid -fullscreen and renaming the videos folder to videos.bak fixed it for me. This causes a black screen behind the player model in the menu, but game play is fine for me. I'm running Manjaro KDE Plasma.
 > -- [https://github.com/ValveSoftware/csgo-osx-linux/issues/2643#issuecomment-999244250](https://github.com/ValveSoftware/csgo-osx-linux/issues/2643#issuecomment-999244250)
 
+For gloves not rendering properly, make sure to use the `-vulkan` mode:
+
+[ CS:GO Gloves not rendering correctly on ubuntu #2102](https://github.com/ValveSoftware/csgo-osx-linux/issues/2102)
 
 # RabbitMQ
 
