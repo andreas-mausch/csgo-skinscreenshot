@@ -31,7 +31,7 @@ public Action:SetSticker(client, args)
   }
 
   new String:slotString[64], String:indexString[64], String:wearString[64], String:scaleString[64], String:rotationString[64];
-  new iSlot, iStickerIndex, Float:fStickerWear, Float:fStickerScale, Float:fStickerRotation;
+  new slot, index, Float:wear, Float:scale, Float:rotation;
   GetCmdArg(1, slotString, sizeof(slotString));
   GetCmdArg(2, indexString, sizeof(indexString));
   
@@ -45,13 +45,13 @@ public Action:SetSticker(client, args)
   }
   GetCmdArg(5, rotationString, sizeof(rotationString));
 
-  iSlot = StringToInt(slotString);
-  iStickerIndex = StringToInt(indexString);
-  fStickerWear = StringToFloat(wearString);
-  fStickerScale = StringToFloat(scaleString);
-  fStickerRotation = StringToFloat(rotationString);
+  slot = StringToInt(slotString);
+  index = StringToInt(indexString);
+  wear = StringToFloat(wearString);
+  scale = StringToFloat(scaleString);
+  rotation = StringToFloat(rotationString);
 
-  PrintToServer("SetSticker slot=%d, index=%d, wear=%f, scale=%f, rotation=%f", iSlot, iStickerIndex, fStickerWear, fStickerScale, fStickerRotation);
+  PrintToServer("SetSticker slot=%d, index=%d, wear=%f, scale=%f, rotation=%f", slot, index, wear, scale, rotation);
 
   int iWeapon = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 
@@ -66,21 +66,21 @@ public Action:SetSticker(client, args)
   }
   CAttributeList pAttributeList = PTaH_GetEconItemViewFromEconEntity(iWeapon).NetworkedDynamicAttributesForDemos;
   
-  pAttributeList.SetOrAddAttributeValue(113 + iSlot * 4, iStickerIndex); // sticker slot %i id
+  pAttributeList.SetOrAddAttributeValue(113 + slot * 4, index); // sticker slot %i id
 	
-  if(fStickerWear != 0.0)
+  if(wear != 0.0)
   {
-    pAttributeList.SetOrAddAttributeValue(114 + iSlot * 4, fStickerWear); // sticker slot %i wear
+    pAttributeList.SetOrAddAttributeValue(114 + slot * 4, wear); // sticker slot %i wear
   }
 
-  if(fStickerScale != 0.0)
+  if(scale != 0.0)
   {
-    pAttributeList.SetOrAddAttributeValue(115 + iSlot * 4, fStickerScale); //sticker slot %i scale
+    pAttributeList.SetOrAddAttributeValue(115 + slot * 4, scale); //sticker slot %i scale
   }
 	
-  if(fStickerRotation != 0.0)
+  if(rotation != 0.0)
   {
-    pAttributeList.SetOrAddAttributeValue(116 + iSlot * 4, fStickerRotation); //sticker slot %i rotation
+    pAttributeList.SetOrAddAttributeValue(116 + slot * 4, rotation); //sticker slot %i rotation
   }
 
   PTaH_ForceFullUpdate(client);
